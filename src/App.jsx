@@ -1,15 +1,11 @@
 import "./App.css";
-import Home from "./pages/Home";
-import Topics from "./pages/Topics";
-
-
+import Terminal from "./components/Terminal";
 
 function App() {
-  
   return (
     <>
-      <Home />
-     </> 
+      <Terminal />
+    </>
   );
 }
 

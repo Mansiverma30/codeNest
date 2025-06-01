@@ -1,13 +1,12 @@
-import React from "react";
-
 function Footer() {
   return (
-    <footer className="flex items-center sticky z-50 bottom-0 justify-between px-6 py-4 bg-white dark:bg-[#121212] shadow-md flex-col md:flex-row">
+    <footer className="flex items-center z-50 bottom-0 justify-between px-6 py-4    border-b  shadow-md flex-col md:flex-row">
       <a
-        href="git ki link"
-        className="text-lg font-medium text-slate-800 dark:text-slate-100"
+        href="https://github.com/Mansiverma30/codeNest"
+        className="text-lg font-medium"
       >
-        GitHub
+        <span className="text-purple-400">Git</span>
+        <span className="text-cyan-400">Hub</span>
       </a>
     </footer>
   );

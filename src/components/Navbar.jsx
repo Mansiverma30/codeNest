@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full fixed top-0 z-50 px-6 py-4 backdrop-blur bg-black/60 dark:bg-white/10 border-b border-white/10 flex justify-between items-center font-mono text-white dark:text-zinc-200 shadow-md">
+    <nav className="w-full fixed top-0 z-50 px-6 py-4 backdrop-blur  dark:bg-white/10 border-b border-white/10 flex justify-between items-center font-mono text-white dark:text-zinc-200 shadow-md bg-clip-padding backdrop-filter bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100">
       {/* Logo */}
       <motion.div
         initial={{ opacity: 0, x: -10 }}
