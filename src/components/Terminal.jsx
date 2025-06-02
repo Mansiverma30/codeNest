@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import TerminalInput from "./TerminalInput";
 
 function Terminal() {
   const terminalLines = [
@@ -7,49 +8,39 @@ function Terminal() {
     "Loading interactive modules...",
     "Fetching your curiosity levels...",
     " ",
-    "You can run several commands:",
-    "<span class='text-green-400'> about</span>",
-    "<span class='text-zinc-300 ml-4'> Learn what CodeNest is and why it exists.</span>",
-    "<span class='text-green-400'> features</span>",
-    "<span class='text-zinc-300 ml-4'> Explore the features of this learning terminal.</span>",
-    "<span class='text-green-400'> learn</span>",
-    "<span class='text-zinc-300 ml-4'> Access interactive coding lessons and challenges.</span>",
-    "<span class='text-green-400'> socials</span>",
-    "<span class='text-zinc-300 ml-4'> Find me on GitHub, LinkedIn & other platforms.</span>",
-    "<span class='text-green-400'> help</span>",
-    "<span class='text-zinc-300 ml-4'> Get tips on how to navigate CodeNest.</span>",
+    `You can run several commands:`,
+    `<span class='text-green-400'>about</span> <br /> <span class='text-zinc-300 ml-4'>Learn what CodeNest is and why it exists.</span> <br />
+   <span class='text-green-400'>features</span> <br /> <span class='text-zinc-300 ml-4'>Explore the features of this learning terminal.</span> <br />
+   <span class='text-green-400'>learn</span> <br /> <span class='text-zinc-300 ml-4'>Access interactive coding lessons and challenges.</span> <br />
+   <span class='text-green-400'>socials</span> <br /> <span class='text-zinc-300 ml-4'>Find me on GitHub, LinkedIn & other platforms.</span> <br />
+   <span class='text-green-400'>help</span> <br /> <span class='text-zinc-300 ml-4'>Get tips on how to navigate CodeNest.</span>`,
     " ",
     "Type a command to get started 🧠💻",
+    `<span class='text-purple-400'>user@codenest:</span>`,
   ];
 
-  const [displayedText, setDisplayedText] = useState("");
   const [allLines, setAllLines] = useState([]);
   const [lineIndex, setLineIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     if (lineIndex < terminalLines.length) {
-      const currentLine = terminalLines[lineIndex];
-      if (charIndex <= currentLine.length) {
-        const timeout = setTimeout(() => {
-          setDisplayedText(currentLine.slice(0, charIndex));
-          setCharIndex((prev) => prev + 1);
-        }, 10);
-        return () => clearTimeout(timeout);
-      } else {
-        const timeout = setTimeout(() => {
-          setAllLines((prev) => [...prev, currentLine]);
-          setLineIndex((prev) => prev + 1);
-          setCharIndex(0);
-          setDisplayedText("");
-        }, 300);
-        return () => clearTimeout(timeout);
-      }
-    } else {
-      setIsTyping(false);
+      const timeout = setTimeout(() => {
+        setAllLines((prev) => [...prev, terminalLines[lineIndex]]);
+        setLineIndex((prev) => prev + 1);
+      }, getDelay(lineIndex));
+
+      return () => clearTimeout(timeout);
     }
-  }, [charIndex, lineIndex]);
+  }, [lineIndex]);
+
+  function getDelay(index) {
+    if (index < 4) return 800;
+    if (index === 4) return 1000;
+    if (index === 5) return 0;
+    if (index === 6) return 0;
+    if (index === 7) return 1000;
+    return 600;
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black px-4">
@@ -72,31 +63,7 @@ function Terminal() {
             {allLines.map((line, idx) => (
               <div key={idx} dangerouslySetInnerHTML={{ __html: line }} />
             ))}
-
-            {isTyping ? (
-              <div>
-                <span dangerouslySetInnerHTML={{ __html: displayedText }} />
-                <span className="animate-pulse text-purple-400">|</span>
-              </div>
-            ) : (
-              <div className="text-green-400">
-                user@codenest:~$ <span className="animate-pulse">|</span>
-              </div>
-            )}
-            {!isTyping && (
-              <div className="mt-4 flex justify-center animate-fade-in-slow">
-                <button
-                  className="b font-semibold  transition  shadow-md cursor-pointer mt-8 text-center bg-indigo-500 hover:bg-indigo-600 dark:bg-purple-500 dark:hover:bg-purple-600 text-white px-4 py-2 rounded-md  dark:shadow-[0_0_10px_#a855f7] hover:scale-105 active:scale-95 duration-200"
-                  onClick={() => {
-                    document
-                      .getElementById("main-section")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  Start Learning
-                </button>
-              </div>
-            )}
+            <TerminalInput />
           </div>
         </div>
       </div>
