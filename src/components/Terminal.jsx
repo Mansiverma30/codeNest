@@ -9,11 +9,12 @@ function Terminal() {
     "Fetching your curiosity levels...",
     " ",
     `You can run several commands:`,
-    `<span class='text-green-400'>about</span> <br /> <span class='text-zinc-300 ml-4'>Learn what CodeNest is and why it exists.</span> <br />
-   <span class='text-green-400'>features</span> <br /> <span class='text-zinc-300 ml-4'>Explore the features of this learning terminal.</span> <br />
-   <span class='text-green-400'>learn</span> <br /> <span class='text-zinc-300 ml-4'>Access interactive coding lessons and challenges.</span> <br />
-   <span class='text-green-400'>socials</span> <br /> <span class='text-zinc-300 ml-4'>Find me on GitHub, LinkedIn & other platforms.</span> <br />
-   <span class='text-green-400'>help</span> <br /> <span class='text-zinc-300 ml-4'>Get tips on how to navigate CodeNest.</span>`,
+    `<span class='text-green-400'>    about</span> <br/> <span class='text-zinc-300 ml-4'>    Learn what CodeNest is and why it exists.</span>
+    <span class='text-green-400'>features</span> <br/> <span class='text-zinc-300 ml-4'>    Explore the features of this learning terminal.</span>
+    <span class='text-green-400'>learn</span> <br/> <span class='text-zinc-300 ml-4'>    Access interactive coding lessons and challenges.</span>
+    <span class='text-green-400'>socials</span> <br/> <span class='text-zinc-300 ml-4'>    Find me on GitHub, LinkedIn & other platforms.</span> 
+    <span class='text-green-400'>help</span> <br/> <span class='text-zinc-300 ml-4'>    Get tips on how to navigate CodeNest.</span>
+    <span class='text-green-400'>clear</span> <br/> <span class='text-zinc-300 ml-4'>    Clear the terminal.</span>`,
     " ",
     "Type a command to get started 🧠💻",
     `<span class='text-purple-400'>user@codenest:</span>`,
@@ -50,12 +51,14 @@ function Terminal() {
       >
         <div className="w-full bg-[#424040] rounded-t-lg">
           <div className="absolute flex space-x-2 px-2 pt-1">
-            <span className="rounded-full bg-red-500 w-3 h-3"></span>
-            <span className="rounded-full bg-yellow-400 w-3 h-3"></span>
-            <span className="rounded-full bg-green-500 w-3 h-3"></span>
+            <span className="rounded-full bg-red-500 w-3 h-3 cursor-pointer"></span>
+            <span className="rounded-full bg-yellow-400 w-3 h-3 cursor-pointer"></span>
+            <span className="rounded-full bg-green-500 w-3 h-3 cursor-pointer"></span>
           </div>
           <div className="text-end items-end justify-items-end font-mono text-[#9c9c9c] px-2">
-            codeNest.js
+            <a href="https://github.com/Mansiverma30/codeNest" target="_blank">
+              codeNest.js
+            </a>
           </div>
         </div>
         <div className="text-white font-mono rounded-b-lg h-[80vh] overflow-auto [&::-webkit-scrollbar]:w-3  [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:bg-neutral-500">
