@@ -1,89 +1,54 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import TerminalInput from "../components/TerminalInput";
+import TerminalLayout from "../components/TerminalLayout";
 import { useState, useEffect } from "react";
-import { ThemeProvider } from "../context/theme";
 
 function Topics() {
-  const [themeMode, setThemeMode] = useState("light");
+  const terminalLines = [
+    "📚 Launching Topic Navigator...",
+    "🔍 Scanning for beginner-friendly content...",
+    "🧩 Organizing HTML, CSS, JavaScript modules...",
+    "🎯 Ready to deep dive into frontend fundamentals!",
+    " ",
+    `You can run several commands:`,
+    `<span class='text-green-400'>    html</span> <br/> <span class='text-zinc-300 ml-4'>   Craft the skeleton of your web pages with semantic HTML.</span>
+    <span class='text-green-400'>css</span> <br/> <span class='text-zinc-300 ml-4'>    Style your websites beautifully using CSS — from layout to animation.</span>
+    <span class='text-green-400'>javascript</span> <br/> <span class='text-zinc-300 ml-4'>    Bring your pages to life by adding logic and interactivity with JavaScript.</span>`,
+    " ",
+    "Type a command to get started 🧠💻",
+    `<span class='text-purple-400'>user@codenest:</span>`,
+  ];
 
-  const lightTheme = () => {
-    setThemeMode("light");
-  };
-
-  const darkTheme = () => {
-    setThemeMode("dark");
-  };
-
-  //actual change in theme
+  const [allLines, setAllLines] = useState([]);
+  const [lineIndex, setLineIndex] = useState(0);
 
   useEffect(() => {
-    document.querySelector("html").classList.remove("light", "dark");
-    document.querySelector("html").classList.add(themeMode);
-  }, [themeMode]);
-  
-  const topics = [
-    {
-      name: "HTML",
-      desc: "Structure your web pages with HTML",
-      link: "/topics/html",
-    },
-    {
-      name: "CSS",
-      desc: "Structure your web pages with HTML",
-      link: "/topics/css",
-    },
-    {
-      name: "JavaScript",
-      desc: "Put functinality in your web pages with JavaScript",
-      link: "/topics/javascript",
-    },
-  ];
+    if (lineIndex < terminalLines.length) {
+      const timeout = setTimeout(() => {
+        setAllLines((prev) => [...prev, terminalLines[lineIndex]]);
+        setLineIndex((prev) => prev + 1);
+      }, getDelay(lineIndex));
+
+      return () => clearTimeout(timeout);
+    }
+  }, [lineIndex]);
+
+  function getDelay(index) {
+    if (index < 4) return 0;
+    if (index === 4) return 1000;
+    if (index === 5) return 0;
+    if (index === 6) return 0;
+    if (index === 7) return 1000;
+    return 600;
+  }
   return (
-    <>
-    <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
-      <Navbar />
-      <div className="items-center flex flex-row gap-8 h-screen justify-center bg-white dark:bg-[#121212] p-4">
-        {topics.map((topic) => (
-          <div className="group relative h-96 w-72 [perspective:1000px]">
-            <div className="absolute duration-1000 w-full h-full [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
-              <div className="absolute w-full h-full rounded-xl bg-gradient-to-br from-[#f6d365] to-[#fda085] dark:from-[#2b5876] dark:to-[#4e4376] p-6 text-white [backface-visibility:hidden]">
-                <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-start">
-                    <div className="text-3xl font-bold text-gray-800 dark:text-gray-100">
-                      {topic.name}
-                    </div>
-                  </div>
-                  <div className="mt-auto">
-                    <p className="text-sm opacity-75 text-gray-800 dark:text-gray-100">
-                      Hover to flip!
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute w-full h-full rounded-xl bg-gradient-to-br from-[#a18cd1] to-[#fbc2eb] dark:from-[#614385] dark:to-[#516395]   p-6 text-white [transform:rotateX(180deg)] [backface-visibility:hidden]">
-                <div className="flex flex-col h-full">
-                  <div className="flex-grow">
-                    <p className="text-lg text-gray-800 dark:text-gray-100">
-                      {topic.desc}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center mt-auto">
-                    <a
-                      className="px-4 py-2 cursor-pointer bg-white text-purple-600 dark:bg-gray-100 dark:text-purple-700 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
-                      href={topic.link}
-                    >
-                      Learn
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <TerminalLayout>
+      <div className="px-4 py-2 text-white font-mono text-left whitespace-pre space-y-1 overflow-auto">
+        {allLines.map((line, idx) => (
+          <div key={idx} dangerouslySetInnerHTML={{ __html: line }} />
         ))}
       </div>
-      <Footer />
-      </ThemeProvider>
-    </>
+      <TerminalInput />
+    </TerminalLayout>
   );
 }
 
