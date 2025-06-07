@@ -1,23 +1,23 @@
+import TerminalLayout from "../../components/TerminalLayout";
+import HtmlTerminalInput from "./CssTerminalInput";
 import { useState, useEffect } from "react";
-import TerminalInput from "./TerminalInput";
-import TerminalLayout from "./TerminalLayout";
 
-function Terminal() {
+function Css() {
   const terminalLines = [
-    "Welcome to CodeNest 🐣",
-    "Booting up the system...",
-    "Loading interactive modules...",
-    "Fetching your curiosity levels...",
+    "Initializing learning environment...",
+    "Spinning up HTML modules...",
+    "Setting up developer energy levels... ☕",
     " ",
-    `You can run several commands:`,
-    `<span class='text-green-400'>    about</span> <br/> <span class='text-zinc-300 ml-4'>    Learn what CodeNest is.</span>
-    <span class='text-green-400'>features</span> <br/> <span class='text-zinc-300 ml-4'>    Explore the features</span>
-    <span class='text-green-400'>socials</span> <br/> <span class='text-zinc-300 ml-4'>    Find me on Social Media.</span> 
-    <span class='text-green-400'>help</span> <br/> <span class='text-zinc-300 ml-4'>    Get all commands.</span>
-    <span class='text-green-400'>clear</span> <br/> <span class='text-zinc-300 ml-4'>    Clear the terminal.</span>
-    <span class='text-green-400'>topics</span> 
-   <span class='text-zinc-300 ml-4'>    Go to the topics page</span>
-   `,
+    `You can run the following commands:`,
+    `<span class='text-green-400'>    home</span> 
+   <span class='text-zinc-300 ml-4'>    Go back to the home page</span>`,
+    `<span class='text-green-400'>    topics</span> 
+   <span class='text-zinc-300 ml-4'>    Go back to the topics page</span>`,
+    `<span class='text-green-400'>    intro, box model, id vs class, display, "colors, themes, and fonts", element control squad, text styling, flexbox, units, & best practices</span>`,
+    `<span class='text-green-400'>    help</span> 
+   <span class='text-zinc-300 ml-4'>    Get list of all commands</span>`,
+    `<span class='text-green-400'>    clear</span> 
+   <span class='text-zinc-300 ml-4'>    Wipe the terminal screen</span>`,
     " ",
     "Type a command to get started 🧠💻",
     `<span class='text-purple-400'>user@codenest:</span>`,
@@ -53,9 +53,9 @@ function Terminal() {
           <div key={idx} dangerouslySetInnerHTML={{ __html: line }} />
         ))}
       </div>
-      <TerminalInput />
+      <HtmlTerminalInput />
     </TerminalLayout>
   );
 }
 
-export default Terminal;
+export default Css;

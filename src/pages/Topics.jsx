@@ -12,7 +12,14 @@ function Topics() {
     `You can run several commands:`,
     `<span class='text-green-400'>    html</span> <br/> <span class='text-zinc-300 ml-4'>   Craft the skeleton of your web pages with semantic HTML.</span>
     <span class='text-green-400'>css</span> <br/> <span class='text-zinc-300 ml-4'>    Style your websites beautifully using CSS — from layout to animation.</span>
-    <span class='text-green-400'>javascript</span> <br/> <span class='text-zinc-300 ml-4'>    Bring your pages to life by adding logic and interactivity with JavaScript.</span>`,
+    <span class='text-green-400'>javascript</span> <br/> <span class='text-zinc-300 ml-4'>    Bring your pages to life by adding logic and interactivity with JavaScript.</span>
+    <span class='text-green-400'>help</span> 
+   <span class='text-zinc-300 ml-4'>    Get list of all commands</span>
+    <span class='text-green-400'>clear</span> 
+   <span class='text-zinc-300 ml-4'>    Wipe the terminal screen</span>
+   <span class='text-green-400'> home</span> 
+   <span class='text-zinc-300 ml-4'>    Go back to the home page</span>
+    `,
     " ",
     "Type a command to get started 🧠💻",
     `<span class='text-purple-400'>user@codenest:</span>`,

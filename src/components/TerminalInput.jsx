@@ -60,8 +60,17 @@ function TerminalInput() {
         navigate("/topics");
         return;
       case "html":
-        output = "HTML is a hypter text markup language";
-        break;
+        navigate("/html");
+        return;
+      case "css":
+        navigate("/css");
+        return;
+      case "javascript":
+        navigate("/js");
+        return;
+      case "home":
+        navigate("/");
+        return;
       default:
         output = `command not found: <span class="text-red-400">${command}</span>`;
     }
@@ -79,15 +88,6 @@ function TerminalInput() {
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
-
-  setTimeout(() => {
-    const btn = document.getElementById("go-to-topics");
-    if (btn) {
-      btn.addEventListener("click", () => {
-        navigate("/topics");
-      });
-    }
-  }, 0);
 
   return (
     <div

@@ -3,6 +3,9 @@ import Terminal from "./components/Terminal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Topics from "./pages/Topics";
 import TerminalL from "./components/TerminalLayout";
+import Html from "./topics/html/Html";
+import Css from "./topics/css/Css";
+import Js from "./topics/javascript/Js";
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
           <Route path="/" element={<Terminal />} />
           <Route path="/topics" element={<Topics />} />
           <Route path="/terminal" element={<TerminalL />} />
+          <Route path="/html" element={<Html />} />
+          <Route path="/css" element={<Css />} />
+          <Route path="/js" element={<Js />} />
         </Routes>
       </Router>
     </>
