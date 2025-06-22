@@ -14,16 +14,17 @@ export const intro = [
     " ",
     "<div class='border-b border-lime-400/30 pb-1 mb-3 text-lime-300 text-lg font-bold'>🚀 Your First HTML Page (Boilerplate)</div>",
     "<span class='text-gray-100'>Every HTML page starts with this simple skeleton:</span>",
-    `<code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;!DOCTYPE html&gt;</code>`,
-    `<code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;html&gt;</code>`,
-    `  <code class="text-teal-300 bg-[#2f2f47]  rounded block w-fit">&lt;head&gt;</code>`,
-    `    <code class="text-teal-300 bg-[#2f2f47]  rounded block w-fit">&lt;title&gt;</code><span class='text-white'>My First Page</span><code class="text-teal-300 bg-[#2f2f47]  rounded  w-fit">&lt;/title&gt;</code>`,
-    `  <code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;/head&gt;</code>`,
-    `  <code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;body&gt;</code>`,
-    `    <code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;h1&gt;</code><span class='text-white'>Hello, CodeNest!</span><code class="text-teal-300 bg-[#2f2f47]  rounded  w-fit">&lt;/h1&gt;</code>`,
-    `    <code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;p&gt;</code><span class='text-white'>This is my first web page.</span><code class="text-teal-300 bg-[#2f2f47]  rounded  w-fit">&lt;/p&gt;</code>`,
-    `  <code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;/body&gt;</code>`,
-    `<code class="text-teal-300 bg-[#2f2f47] block rounded  w-fit">&lt;/html&gt;</code>`,
+    `<pre class="bg-[#2f2f47] text-teal-300 text-sm p-3 rounded overflow-x-auto">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;<span class="text-white">My First Page</span>&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;<span class="text-white">Hello, CodeNest!</span>&lt;/h1&gt;
+    &lt;p&gt;<span class="text-white">This is my first web page.</span>&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+`,
     " ",
     "<div class='border-b border-orange-400/30 pb-1 mb-3 text-orange-300 text-lg font-bold'>🧠 Let's break it down like a desi dev:</div>",
     `<span class="text-white">&lt;!DOCTYPE html&gt;</span> <span class="text-gray-400">- Bro, I’m writing HTML5, okay?</span>`,
