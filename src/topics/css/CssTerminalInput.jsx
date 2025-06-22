@@ -92,9 +92,9 @@ function HtmlTerminalInput() {
       case "html":
         navigate("/html");
         return;
-      case "javascript":
+      /*  case "javascript":
         navigate("/js");
-        return;
+        return; */
       default:
         output = `command not found: <span class="text-red-400">${command}</span>`;
     }

@@ -6,11 +6,10 @@ import {
   intro,
   layout,
   links,
-  lists,
   media,
   tables,
   tags,
-  text,
+  textElements,
 } from "./content";
 
 function HtmlTerminalInput() {
@@ -50,12 +49,9 @@ function HtmlTerminalInput() {
         setInput("");
         return;
       case "text":
-        setHistory((prev) => [...prev, "> text", ...text]);
+        setHistory((prev) => [...prev, "> text", ...textElements]);
         setInput("");
         return;
-      case "lists":
-        setHistory((prev) => [...prev, "> lists", ...lists]);
-        setInput("");
         return;
       case "link":
         setHistory((prev) => [...prev, "> link", ...links]);
@@ -84,9 +80,9 @@ function HtmlTerminalInput() {
       case "css":
         navigate("/css");
         return;
-      case "javascript":
+      /* case "javascript":
         navigate("/js");
-        return;
+        return; */
       default:
         output = `command not found: <span class="text-red-400">${command}</span>`;
     }
@@ -113,7 +109,7 @@ function HtmlTerminalInput() {
       {history.map((line, i) => (
         <div
           key={i}
-          className="whitespace-pre-wrap"
+          className="whitespace-pre-wrap "
           dangerouslySetInnerHTML={{ __html: line }}
         />
       ))}
@@ -126,7 +122,7 @@ function HtmlTerminalInput() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="bg-transparent outline-none text-white w-full"
+          className="bg-transparent outline-none w-full"
         />
       </div>
     </div>

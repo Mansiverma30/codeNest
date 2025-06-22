@@ -13,7 +13,7 @@ function Html() {
    <span class='text-zinc-300 ml-4'>    Go back to the home page</span>`,
     `<span class='text-green-400'>    topics</span> 
    <span class='text-zinc-300 ml-4'>    Go back to the topics page</span>`,
-    `<span class='text-green-400'>    intro, tags and attributes, text, lists, link, layout, forms, table, multi media, & best practices</span>`,
+    `<span class='text-green-400'>    intro, 'tags and attributes', text, link, layout, forms, table, multi media, & best practices</span>` /* <br class='sm:hidden block/>' */,
     `<span class='text-green-400'>    help</span> 
    <span class='text-zinc-300 ml-4'>    Get list of all commands</span>`,
     `<span class='text-green-400'>    clear</span> 
@@ -48,7 +48,7 @@ function Html() {
 
   return (
     <TerminalLayout>
-      <div className="px-4 py-2 text-white font-mono text-left whitespace-pre space-y-1">
+      <div className="px-4 py-2 text-white font-mono text-left whitespace-pre space-y-1 ">
         {allLines.map((line, idx) => (
           <div key={idx} dangerouslySetInnerHTML={{ __html: line }} />
         ))}

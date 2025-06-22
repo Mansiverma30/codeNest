@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+/src/topics/javascript/
 
 # Editor directories and files
 .vscode/*

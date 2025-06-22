@@ -20,7 +20,7 @@ function TerminalInput() {
                     <section class="flex flex-col justify-between bg-transparent border border-dashed border-gray-700  rounded-lg p-4 transition-all hover:scale-[1.02] active:scale-95 duration-200">
                       <div>
                         <h2 class="text-xl text-center font-semibold text-white mb-2">Topics</h2>
-                        <p class="text-gray-300 text-sm">Explore core frontend concepts like HTML, CSS, JavaScript, React, and more — all broken down into bite-sized, beginner-friendly modules.</p>
+                        <p class="text-gray-300 text-sm">Explore core frontend concepts like HTML and CSS — both broken down into bite-sized, beginner-friendly modules.</p>
                       </div>
                       <button id="go-to-topics" class="mt-2 text-center bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md shadow-[0_0_6px_rgba(255,255,255,0.1)] transition-all">Learn More</button>
                     </section>
@@ -65,9 +65,9 @@ function TerminalInput() {
       case "css":
         navigate("/css");
         return;
-      case "javascript":
+      /* case "javascript":
         navigate("/js");
-        return;
+        return; */
       case "home":
         navigate("/");
         return;

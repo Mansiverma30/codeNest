@@ -3,7 +3,7 @@ export default function Terminal({ children }) {
     <div className=" flex items-center justify-center bg-black ">
       <div
         id="main-section"
-        className="relative w-screen h-screen overflow-auto [&::-webkit-scrollbar]:w-3  [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:bg-neutral-500  rounded-lg shadow-lg bg-gradient-to-r from-[#14141f] to-[#1e1e2f] border-b border-[#3e3e5c]"
+        className="relative w-screen h-screen overflow-auto [&::-webkit-scrollbar]:w-3  [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:bg-neutral-500  rounded-lg shadow-lg bg-gradient-to-r from-[#1e1e2f] via-[#232336] to-[#2c2c4a] border-b border-[#3e3e5c]"
       >
         <div className="w-full bg-[#424040] rounded-t-lg">
           <div className="absolute flex space-x-2 px-2 pt-1">

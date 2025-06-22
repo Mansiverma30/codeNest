@@ -1,533 +1,1146 @@
 export const intro = [
-    "🌈 What is CSS?",
-    "------------------------------",
-    "CSS stands for Cascading Style Sheets — and it’s what makes your boring black-and-white HTML look like a freakin’ masterpiece.",
-    "You’ve got HTML as the skeleton, but CSS? That’s the outfit, the makeup, the vibe.",
-    "Without CSS:\n&lt;p&gt;Hello world!&lt;/p&gt;",
-    "With CSS:\n&lt;p style=\"color: hotpink; font-size: 24px;\"&gt;Hello world!&lt;/p&gt;",
-    "Boom — now she’s glowing.",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-1'>🌈 What is CSS?</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<span class='text-gray-100'>CSS = <span class='text-green-300 font-semibold'>Cascading Style Sheets</span> — the glow-up your HTML needs ✨</span>",
+  "<span class='text-gray-300'>HTML = skeleton 🦴, CSS = outfit 💃, vibe 🎧, and attitude 😎</span>",
+  "<div class='bg-[#2f2f47] text-sm text-green-400 px-2 py-1 rounded mt-3 w-fit'>&lt;p&gt;Hello world!&lt;/p&gt;</div>",
+  "<div class='mt-1 italic text-gray-400'>Output: <span class='text-white'>Hello world!</span></div>",
+  "<div class='bg-[#2f2f47] text-sm text-pink-400 px-2 py-1 rounded w-fit'>&lt;p style=\"color: hotpink; font-size: 24px;\"&gt;Hello world!&lt;/p&gt;</div>",
+  "<div class='mt-1 italic text-gray-400'>Output: <span style='color: hotpink; font-size: 24px;'>Hello world!</span></div>",
+  "<span class='text-green-300 font-medium'>Boom — now she’s glowing 💅</span>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🧾 CSS Syntax — Looks Fancy, But It's Simple</div>",
+  "<span class='text-gray-100'>Basic pattern:</span>",
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>selector {
+  property: value;
+}
+</code>`,
+  "<ul class='list-disc list-inside text-gray-300 mt-2 space-y-1'>" +
+  "<li><b>Selector</b> → Who? (e.g., <code>p</code>, <code>.card</code>, <code>header</code>)</li>" +
+  "<li><b>Property</b> → What are you changing?</li>" +
+  "<li><b>Value</b> → What are you changing it to?</li>" +
+  "</ul>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit mt-2'>h1 {
+  color: royalblue;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output: <h1 style='color: royalblue; font-family: Poppins, sans-serif; text-align: center;'>Hello I'm h1</h1></div>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🎯 3 Ways to Add CSS</div>",
+  "<div class='text-pink-400 mt-2'>1. Inline (quick & dirty)</div>",
+  "<div class='bg-[#2f2f47] text-sm text-pink-300 px-2 py-1 rounded w-fit'>&lt;p style=\"color: red;\"&gt;I'm spicy red!&lt;/p&gt;</div>",
+  "<div class='mt-1 italic text-gray-400'>Output: <span style='color: red;'>I'm spicy red!</span></div>",
+  "<span class='text-gray-400'>⚠️ Good for testing. Bad for big projects.</span>",
+  "<div class='text-pink-400 mt-3'>2. Internal (inside <code>&lt;style&gt;</code>)</div>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>&lt;head&gt;
+  &lt;style&gt;
+    body {
+      background-color: #f9f9f9;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+</code>`,
+  "<span class='text-gray-400'>Great for small projects!</span>",
+  "<div class='text-pink-400 mt-3'>3. External (the pro way)</div>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>&lt;link rel=\"stylesheet\" href=\"styles.css\" /&gt;</code>`,
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>body {
+  background-color: #ffffff;
+  color: #333;
+}
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output: <div style='background-color: #ffffff; color: #333;'>This is body text</div></div>",
+  "<span class='text-green-300'>✅ Best for organized, large-scale codebases.</span>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🍭 CSS Properties You’ll Love</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 mt-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr>
+        <th class='py-1 px-2 border border-gray-700'>Property</th>
+        <th class='py-1 px-2 border border-gray-700'>What It Does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>color</code></td><td class='py-1 px-2 border border-gray-700'>Text color</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>background</code></td><td class='py-1 px-2 border border-gray-700'>Background color/image</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>font-size</code></td><td class='py-1 px-2 border border-gray-700'>Text size</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>font-family</code></td><td class='py-1 px-2 border border-gray-700'>Font style</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>margin</code></td><td class='py-1 px-2 border border-gray-700'>Space outside element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>padding</code></td><td class='py-1 px-2 border border-gray-700'>Space inside element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>border</code></td><td class='py-1 px-2 border border-gray-700'>Adds border around element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>width / height</code></td><td class='py-1 px-2 border border-gray-700'>Set dimensions</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>text-align</code></td><td class='py-1 px-2 border border-gray-700'>Aligns text</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>display</code></td><td class='py-1 px-2 border border-gray-700'>Layout mode (inline, flex, etc.)</td></tr>
+    </tbody>
+  </table>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🧃 Button Example with CSS</div>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>&lt;button class="cool-btn"&gt;Click Me&lt;/button&gt;</code>`,
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>.cool-btn {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.cool-btn:hover {
+  transform: scale(1.05);
+}
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div><button style='background-color: #6c5ce7; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 8px; cursor: pointer;'>Click Me</button>",
+  "<span class='text-green-300'>👀 Now that button's got <b>vibes</b>.</span>",
+  " ",
+  "<div class='text-green-400 font-semibold mt-6'>🧠 TL;DR</div>",
+  `• <code>CSS</code> = Style engine for your HTML
+• 3 ways to use: <b>inline</b>, <b>internal</b>, <b>external</b>
+• Use <code>selector { property: value; }</code>
+• Style common things: <code>color</code>, <code>font</code>, <code>margin</code>, <code>padding</code>, <code>display</code>`,
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>The CSS Box Model</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>box model</code> in the terminal to continue.</div>",
 
-    "---",
-
-    "🧾 CSS Syntax — Looks Fancy, But It's Simple",
-    "Here’s the formula:\nselector {\n  property: value;\n}",
-    "Selector → Who are you styling? (like `p`, `.card`, `header`)",
-    "Property → What are you changing? (like `color`, `font-size`, `background`)",
-    "Value → What are you changing it to?",
-    "🪄 Example:\nh1 {\n  color: royalblue;\n  font-family: \"Poppins\", sans-serif;\n  text-align: center;\n}",
-
-    "---",
-
-    "🎯 3 Ways to Add CSS",
-
-    "1. Inline (quick & dirty)\n&lt;p style=\"color: red;\"&gt;I'm spicy red!&lt;/p&gt;\nBad for big projects. Good for testing.",
-
-    "---",
-
-    "2. Internal (inside `&lt;style&gt;` tag)\n&lt;head&gt;\n  &lt;style&gt;\n    body {\n      background-color: f9f9f9;\n    }\n  &lt;/style&gt;\n&lt;/head&gt;\nNice for small projects.",
-
-    "---",
-
-    "3. External (the professional way)\n&lt;link rel=\"stylesheet\" href=\"styles.css\" /&gt;\nThen in `styles.css`:\nbody {\n  background-color: ffffff;\n  color: 333;\n}\nBest way to keep things organized & clean.\nThis is what real devs use.",
-
-    "---",
-
-    "🍭 Common CSS Properties You’ll Love",
-    "| Property         | What It Does                         |",
-    "| ---------------- | ------------------------------------ |",
-    "| `color`          | Text color                           |",
-    "| `background`     | Background color/image               |",
-    "| `font-size`      | Text size                            |",
-    "| `font-family`    | Font style                           |",
-    "| `margin`         | Space outside the element            |",
-    "| `padding`        | Space inside the element             |",
-    "| `border`         | Adds border around an element        |",
-    "| `width`/`height` | Sets size                            |",
-    "| `text-align`     | Aligns text (left, center, right)    |",
-    "| `display`        | Changes layout (inline, block, flex) |",
-
-    "---",
-
-    "🧃 Example Time!\nLet’s style a button 💅\n&lt;button class=\"cool-btn\"&gt;Click Me&lt;/button&gt;\n.cool-btn {\n  background-color: 6c5ce7;\n  color: white;\n  border: none;\n  padding: 12px 20px;\n  font-size: 16px;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: transform 0.2s;\n}\n.cool-btn:hover {\n  transform: scale(1.05);\n}\n👀 Now that button's got vibes.",
-
-    "---",
-
-    "🧠 TL;DR\nCSS = your website’s wardrobe 👗\n3 ways to add it: inline, internal, external\nUse selectors to target elements and properties to style them\nStart with basic stuff: colors, font, size, layout"
-
+  " ",
 ];
+
 export const boxModel = [
-    "🧱 The CSS Box Model – The Backbone of Every Element",
-    "------------------------------",
-    "If you want your layout to stop breaking,\nif you want spacing to make sense,\nif you want that “why tf is this div off-center” bug to go away —\nyou NEED to understand the Box Model.",
+  "<div class='text-pink-300 text-lg font-bold mb-1'>🧱 The CSS Box Model – The Backbone of Every Element</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<p class='text-gray-200'>If your layout keeps breaking or spacing feels weird, this is your golden ticket 🎫</p>",
+  "<p class='text-gray-300 italic'>Understand this and those rogue divs will fear you 😤</p>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🎁 Every Element is a Box</div>",
+  "<p class='text-gray-100'>Each HTML element is like an onion 🧅 with these layers:</p>",
+  `<pre class='bg-[#2f2f47] text-gray-200 text-sm p-3 rounded mt-2'>
+|-----------------------------|
+|         margin              |
+|  |---------------------|    |
+|  |      border         |    |
+|  |  |-------------|    |    |
+|  |  |  padding    |    |    |
+|  |  |  content    |    |    |
+|  |  |-------------|    |    |
+|  |---------------------|    |
+|-----------------------------|
+</pre>`,
+  "<div class='text-green-300 font-semibold mt-4'>🧠 Layer Breakdown</div>",
+  "<span class='text-pink-400 font-medium'>1. Content</span>",
+  "<p class='text-gray-200'>Your actual text or image. E.g.:</p>",
+  "<code class='bg-[#2f2f47] text-sm text-blue-300 px-2 py-1 rounded block w-fit'>&lt;p&gt;Hello World&lt;/p&gt;</code>",
+  "<div class='mt-1 italic text-gray-400'>Output: <p>Hello World</p></div>",
+  "<span class='text-pink-400 font-medium'>2. Padding</span>",
+  "<p class='text-gray-200'>Space <i>inside</i> the box, between content and border:</p>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>p {
+  padding: 20px;
+}</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div><p style='background:#2f2f47; padding: 20px; color:white;'>This paragraph has 20px padding</p>",
+  "<span class='text-pink-400 font-medium'>3. Border</span>",
+  "<p class='text-gray-200'>Visible outline of the element. Can be styled:</p>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>p {
+  border: 2px solid black;
+}</code>`,
+  "<ul class='text-gray-300 list-disc list-inside mt-2 space-y-1'>" +
+  "<li><code>dotted</code></li>" +
+  "<li><code>dashed</code></li>" +
+  "<li><code>solid</code></li>" +
+  "<li><code>none</code></li>" +
+  "<li><code>double</code> (fancy!)</li>" +
+  "</ul>",
+  "<div class='mt-1 italic text-gray-400'>Output:</div><p style='border: 2px solid black; padding: 10px;'>With a border</p>",
+  "<span class='text-pink-400 font-medium'>4. Margin</span>",
+  "<p class='text-gray-200'>Space <i>outside</i> the element. Creates gap from others.</p>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>p {
+  margin: 30px;
+}
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div><p style='margin: 30px; background: #2f2f47; padding: 10px; color: white;'>With margin around</p>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🧪 Real-Life Example</div>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>.card {
+  padding: 20px;
+  border: 2px solid #333;
+  margin: 40px;
+}</code>`,
+  "<p class='text-gray-100'>This adds:</p>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li>🧃 20px padding inside</li>" +
+  "<li>🔳 2px solid border</li>" +
+  "<li>🚀 40px margin outside</li>" +
+  "</ul>",
+  "<div class='mt-1 italic text-gray-400'>Output:</div><div style='padding:20px; border:2px solid #333; margin:40px; background:#2f2f47; color:white;'>I’m a .card with padding, border, and margin</div>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🛠️ Debugging Hack</div>",
+  "<p class='text-gray-200'>Lost in layout? Add this to see real box boundaries:</p>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>* {
+  outline: 1px solid red;
+}</code>`,
+  "<p class='text-gray-400 italic'>Lifesaver 🔥</p>",
+  "<div class='text-yellow-300 font-semibold mt-4'>💡 Bonus: `box-sizing`</div>",
+  "<p class='text-gray-200'>Want consistent sizing? Always write this:</p>",
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>* {
+  box-sizing: border-box;
+}</code>`,
+  "<p class='text-green-300'>✅ Includes padding & border inside total width/height.<br/>Saves your sanity.</p>",
+  "<div class='text-green-400 font-semibold mt-4'>🔚 TL;DR</div>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li>Every element = box</li>" +
+  "<li><b>Content → Padding → Border → Margin</b></li>" +
+  "<li><code>padding</code> = inside spacing</li>" +
+  "<li><code>margin</code> = outside spacing</li>" +
+  "<li><code>box-sizing: border-box</code> = less pain</li>" +
+  "</ul>",
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>id vs class</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>id vs class</code> in the terminal to continue.</div>",
 
-    "---",
-
-    "🎁 Imagine Every Element is a Box",
-    "Every HTML element is treated like a box, and that box has layers — like an onion 🧅",
-    "Here’s the structure from inside to outside:\n|-----------------------------|\n|         margin              |\n|  |---------------------|   |\n|  |      border         |   |\n|  |  |-------------|    |   |\n|  |  |  padding    |    |   |\n|  |  |  content    |    |   |\n|  |  |-------------|    |   |\n|  |---------------------|   |\n|-----------------------------|",
-
-    "---",
-
-    "🧠 Let’s Break it Down:",
-
-    "1. Content\nThis is where your text, image, or actual element lives.\nLike:\n&lt;p&gt;Hello World&lt;/p&gt;",
-
-    "---",
-
-    "2. Padding\nThis is the space inside the box, between the content and the border.\nIt pushes the content inward.\np {\n  padding: 20px;\n}",
-
-    "---",
-
-    "3. Border\nThis is the visible edge around your element.\np {\n  border: 2px solid black;\n}\nYou can style borders like:\n\n `dotted`\n `dashed`\n `solid`\n `none`\n `double` (fancy!)",
-
-    "---",
-
-    "4. Margin\nThis is the space outside the element. It pushes the whole box away from other elements.\np {\n  margin: 30px;\n}",
-
-    "---",
-
-    "🧪 A Real Example:\n.card {\n  padding: 20px;\n  border: 2px solid 333;\n  margin: 40px;\n}\n📦 This `.card` now has:\n20px space inside the box\nA 2px border\n40px space between it and anything around it",
-
-    "---",
-
-    "🛠️ Visual Hack:\nIf you ever feel lost, add this in CSS:\n{\n  outline: 1px solid red;\n}\nThis will show the actual boundaries of every element on your page.\nPure life-saver during layout debugging 🔥",
-
-    "---",
-
-    "💡 Bonus: `box-sizing` (important af)\nBy default, padding & border add extra size to the element.\nBut if you write this:\n{\n  box-sizing: border-box;\n}\nThen CSS includes padding & border inside the total size.\nMUCH easier to work with. You should always use this. Like, always.",
-
-    "---",
-
-    "🔚 TL;DR\nEvery element is a box with content, padding, border, and margin\nPadding pushes content inward\nMargin pushes the whole box outward\nbox-sizing: border-box keeps sizing sane\nUnderstanding this = fewer layout headaches forever"
-
-]
+  " "
+];
 
 export const idVsClass = [
-    "🎯 `id` vs `class` in CSS — The Targeting Game",
-    "------------------------------",
-    "You've already used them in HTML.\nNow let’s learn how to style like a sniper, not a shotgun 😎",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-1'>🎯 <code class='text-yellow-400'>id</code> vs <code class='text-yellow-400'>class</code> in CSS — The Targeting Game</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<span class='text-gray-100'>You’ve seen them in HTML. Now let's style like a <span class='text-green-300 font-semibold'>sniper</span>, not a shotgun 😎</span>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🔹 <code class='text-yellow-400'>id</code> — The One and Only</div>",
+  "<span class='text-gray-100'>Think of <code class='text-yellow-400'>id</code> like an Aadhaar number — unique and non-repeatable.</span>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit mt-1'>&lt;h1 id="main-heading"&gt;Welcome to CodeNest&lt;/h1&gt;</code>`,
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>#main-heading {
+  color: #e84393;
+  font-size: 32px;
+}</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div><h1 style='color:#e84393; font-size:32px;'>Welcome to CodeNest</h1>",
+  "<span class='text-green-300'>✅ Use <code>id</code> for targeting one-of-a-kind elements.</span>",
+  "<span class='text-red-300'>⚠️ Don't overuse — it has higher specificity and can mess with overrides later.</span>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🔸 <code class='text-yellow-400'>class</code> — The Squad Leader</div>",
+  "<span class='text-gray-100'>Think of <code class='text-yellow-400'>class</code> like a school uniform — one style, many elements.</span>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit mt-1'>&lt;p class="tagline"&gt;Learn. Build. Repeat.&lt;/p&gt;<br />
+&lt;p class="tagline"&gt;Simple lessons for complex minds.&lt;/p&gt;</code>`,
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>.tagline {
+  font-style: italic;
+  color: #636e72;
+}</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<p class='italic text-[#636e72]'>Learn. Build. Repeat.</p>" +
+  "<p class='italic text-[#636e72]'>Simple lessons for complex minds.</p>",
+  "<span class='text-green-300'>✅ Perfect for shared styles — buttons, cards, navbars.</span>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>📊 Quick Comparison</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 mt-1'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr>
+        <th class='py-1 px-2 border border-gray-700'>Feature</th>
+        <th class='py-1 px-2 border border-gray-700'><code class='text-yellow-400'>id</code></th>
+        <th class='py-1 px-2 border border-gray-700'><code class='text-yellow-400'>class</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class='py-1 px-2 border border-gray-700'>Uniqueness</td>
+        <td class='py-1 px-2 border border-gray-700'>One per element</td>
+        <td class='py-1 px-2 border border-gray-700'>Many elements can share</td>
+      </tr>
+      <tr>
+        <td class='py-1 px-2 border border-gray-700'>Selector</td>
+        <td class='py-1 px-2 border border-gray-700'><code>#id-name</code></td>
+        <td class='py-1 px-2 border border-gray-700'><code>.class-name</code></td>
+      </tr>
+      <tr>
+        <td class='py-1 px-2 border border-gray-700'>Use Case</td>
+        <td class='py-1 px-2 border border-gray-700'>Unique component</td>
+        <td class='py-1 px-2 border border-gray-700'>Reusable styles</td>
+      </tr>
+      <tr>
+        <td class='py-1 px-2 border border-gray-700'>Priority</td>
+        <td class='py-1 px-2 border border-gray-700'>Higher specificity</td>
+        <td class='py-1 px-2 border border-gray-700'>Lower specificity</td>
+      </tr>
+    </tbody>
+  </table>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>💣 Can You Mix Them?</div>",
+  "<span class='text-gray-100'>Yes — and it’s powerful!</span>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>&lt;div id="intro" class="card highlight"&gt;<br />
+&nbsp;&nbsp;Hello, world!<br />
+&lt;/div&gt;</code>`,
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>#intro {
+  font-size: 20px;
+}<br />
+.card {
+  padding: 16px;
+}<br />
+.highlight {
+  background-color: #ffeaa8;
+  color: "black";
+}</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div style='font-size:20px; padding:16px; background-color:#ffeaa8; color:#000000;'>Hello, world!</div>",
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🧠 Selector Syntax Recap</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr>
+        <th class='py-1 px-2 border border-gray-700'>Selector</th>
+        <th class='py-1 px-2 border border-gray-700'>Targets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>#idName</code></td><td class='py-1 px-2 border border-gray-700'>One specific element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>.className</code></td><td class='py-1 px-2 border border-gray-700'>All with that class</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>tagname</code></td><td class='py-1 px-2 border border-gray-700'>All of that tag</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>div.className</code></td><td class='py-1 px-2 border border-gray-700'>Only divs with that class</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>div p</code></td><td class='py-1 px-2 border border-gray-700'>All p inside divs</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>.btn:hover</code></td><td class='py-1 px-2 border border-gray-700'>Hover effect on .btn</td></tr>
+    </tbody>
+  </table>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold mt-4'>🔥 Real-Life Example</div>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>
+&lt;button class="btn btn-primary"&gt;Submit&lt;/button&gt;
+</code>`,
+  `<code class='bg-[#2f2f47] text-pink-400 text-sm px-2 py-1 rounded block w-fit'>
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+}<br />
+.btn-primary {
+  background-color: #0984e3;
+  color: white;
+}
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<button style='padding:12px 20px; border-radius:8px; background-color:#0984e3; color:white;'>Submit</button>",
+  "<span class='text-green-300'>🎯 <code>.btn</code> = shared style</span><br />" +
+  "<span class='text-green-300'>🎯 <code>.btn-primary</code> = extra flair</span>",
+  " ",
+  "<div class='text-green-400 font-semibold mt-6'>🧠 TL;DR</div>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li><code>id</code> = One special element</li>" +
+  "<li><code>class</code> = Reusable styles</li>" +
+  "<li>✅ Always prefer <code>class</code> for styling</li>" +
+  "<li>💪 Combine selectors for powerful, flexible styles</li>" +
+  "</ul>",
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>Display Property</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>display</code> in the terminal to continue.</div>",
+  " ",
+];
 
-    "---",
-
-    "🔹 `id` — The One and Only",
-    "Think of `id` like a person’s Aadhaar number —\none element, one `id`, no duplicates.",
-    "&lt;h1 id=\"main-heading\"&gt;Welcome to CodeNest&lt;/h1&gt;",
-    "In CSS:\nmain-heading {\n  color: e84393;\n  font-size: 32px;\n}",
-    "✅ Use `id` when you're styling or targeting a unique element only once.",
-    "⚠️ Don’t overuse it for styling. It's strong — too strong — and can cause specificity wars later.",
-
-    "---",
-
-    "🔸 `class` — The Squad Leader",
-    "Think of `class` like a school uniform —\nYou give it to multiple people (elements), and they all look the same.",
-    "&lt;p class=\"tagline\"&gt;Learn. Build. Repeat.&lt;/p&gt;",
-    "&lt;p class=\"tagline\"&gt;Simple lessons for complex minds.&lt;/p&gt;",
-    "In CSS:\n.tagline {\n  font-style: italic;\n  color: 636e72;\n}",
-    "✅ Use `class` for grouping styles you’ll reuse — headers, buttons, cards, navbars, etc.",
-
-    "---",
-
-    "📊 `id` vs `class` — Quick Comparison",
-    "| Feature    | `id`                       | `class`                      |",
-    "| ---------- | -------------------------- | ---------------------------- |",
-    "| Uniqueness | Only one per element       | Can be used on many elements |",
-    "| Selector   | `#id-name`                 | `.class-name`                |",
-    "| Use case   | Unique sections/components | Reusable styles              |",
-    "| Priority   | Higher specificity         | Lower specificity            |",
-
-    "---",
-
-    "💣 Can You Mix Them?",
-    "Of course.",
-    "&lt;div id=\"intro\" class=\"card highlight\"&gt;\n  Hello, world!\n&lt;/div&gt;",
-    "You can style them separately:\n#intro {\n  font-size: 20px;\n}\n.card {\n  padding: 16px;\n}\n.highlight {\n  background-color: ffeaa7;\n}",
-
-    "---",
-
-    "🧠 Selector Syntax Recap",
-    "| Selector        | Targets                           |",
-    "| --------------- | --------------------------------- |",
-    "| `idName`        | One specific element with that id |",
-    "| `.className`    | All elements with that class      |",
-    "| `tagname`       | All `&lt;p&gt;` or `&lt;h1&gt;` or whatever   |",
-    "| `div.className` | Only `div`s with that class       |",
-    "| `div p`         | All `&lt;p&gt;` inside `&lt;div&gt;`          |",
-    "| `.btn:hover`    | When mouse hovers on `.btn`       |",
-
-    "---",
-
-    "🔥 Real-Life Use Case",
-    "&lt;button class=\"btn btn-primary\"&gt;Submit&lt;/button&gt;",
-    ".btn {\n  padding: 12px 20px;\n  border-radius: 8px;\n}",
-    ".btn-primary {\n  background-color: 0984e3;\n  color: white;\n}",
-    "🎯 `.btn` handles shared button styles",
-    "🎯 `.btn-primary` adds extra flair for a specific type",
-
-    "---",
-
-    "🧠 TL;DR\nUse `id` when you need to style only one special element.\nUse `class` for reusable styles across elements.\nAlways prefer `class` for styling unless absolutely necessary.\nCombine selectors for power 💪"
-
-]
 export const display = [
-    "🧱 What is `display` in CSS?",
-    "------------------------------",
-    "Every HTML element has a `display` type.\nThis defines how the element behaves on the page —\nDoes it sit next to others? Stretch full width? Wrap content? Float like a champ?\nLet’s break it down like a pro.",
+  "<div class='text-pink-300 text-lg font-bold mb-1'>🧱 What is <code class='text-yellow-300'>display</code> in CSS?</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<p class='text-gray-200'>Every HTML element has a <code class='text-yellow-300'>display</code> type.</p>",
+  "<p class='text-gray-300'>It defines how it behaves — inline, block, invisible, or layout wizard 🧙‍♂️</p>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🥇 Default Display Types</div>",
+  "<p class='text-pink-400 font-medium mt-2'>1. <code>block</code></p>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li>Takes full width</li>" +
+  "<li>Starts on a new line</li>" +
+  "<li>Examples: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code></li>" +
+  "</ul>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit mt-2'>&lt;p&gt;Hello&lt;/p&gt;
+&lt;p&gt;World&lt;/p&gt;
+</code>
+<span class='text-green-300'>👆 They’ll stack top to bottom.</span>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-white'><p>Hello</p><p>World</p></div>",
+  "<p class='text-pink-400 font-medium mt-4'>2. <code>inline</code></p>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li>Takes only as much width as needed</li>" +
+  "<li>Can sit beside others</li>" +
+  "<li>Examples: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code></li>" +
+  "</ul>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit mt-2'>&lt;span&gt;Hello&lt;/span&gt; &lt;span&gt;World&lt;/span&gt;
+</code>
+<span class='text-green-300'>👆 Side-by-side layout.</span>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-white'><span>Hello</span> <span>World</span></div>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🥈 Modified Display Types</div>",
+  "<p class='text-pink-400 font-medium mt-2'>3. <code>inline-block</code></p>",
+  "<p class='text-gray-200'>Like inline but supports width, height, padding.</p>",
+  "<p class='text-gray-300'>Best for <b>buttons</b>, <b>badges</b>, etc.</p>",
+  "<p class='text-pink-400 font-medium mt-4'>4. <code>none</code></p>",
+  "<p class='text-gray-200'>Hides the element completely — like magic 🎩</p>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>&lt;p class="bye"&gt;You can't see me&lt;/p&gt;
+&lt;style&gt;
+  .bye {
+    display: none;
+  }
+&lt;/style&gt;
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-white'><p style='display: none;'>You can't see me</p></div>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🌟 Flex — The Real MVP</div>",
+  "<p class='text-gray-200'>Display: flex = layout freedom</p>",
+  "<p class='text-gray-300'>Children line up like a team:</p>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>&lt;div class="container"&gt;
+  &lt;div&gt;One&lt;/div&gt;
+  &lt;div&gt;Two&lt;/div&gt;
+  &lt;div&gt;Three&lt;/div&gt;
+&lt;/div&gt;
 
-    "---",
+&lt;style&gt;
+  .container {
+    display: flex;
+  }
+&lt;/style&gt;</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-white flex gap-2'><div>One</div><div>Two</div><div>Three</div></div>",
+  "<p class='text-green-300'>👆 Items now align horizontally.</p>",
+  "<p class='text-pink-400 font-medium mt-3'>Bonus Flex Powers</p>",
+  `<code class='bg-[#2f2f47] text-green-400 text-sm px-2 py-1 rounded block w-fit'>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-white grid grid-cols-3 gap-5'><div class='bg-pink-400 p-2'>1</div><div class='bg-pink-400 p-2'>2</div><div class='bg-pink-400 p-2'>3</div></div>",
+  "<div class='text-yellow-300 font-semibold mt-4'>🧊 Grid — The Big Bro of Flex</div>",
+  "<p class='text-gray-200'>Full control of rows + columns</p>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+</code>
+<p class='text-green-300'>You just made 3 equal-width columns ✨</p>
+<p class='text-gray-300'>Bonus: <code>grid-auto-rows: 100px;</code> adds auto row height</p>`,
+  "<div class='text-green-400 font-semibold mt-4'>🧠 TL;DR — Display Types</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 mt-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr>
+        <th class='py-1 px-2 border border-gray-700'>Type</th>
+        <th class='py-1 px-2 border border-gray-700'>What It Does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>block</code></td><td class='py-1 px-2 border border-gray-700'>Full-width, new line</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>inline</code></td><td class='py-1 px-2 border border-gray-700'>Inline flow, can't set width/height</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>inline-block</code></td><td class='py-1 px-2 border border-gray-700'>Inline with block features</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>none</code></td><td class='py-1 px-2 border border-gray-700'>Hides element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>flex</code></td><td class='py-1 px-2 border border-gray-700'>One-dimensional layout</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>grid</code></td><td class='py-1 px-2 border border-gray-700'>Two-dimensional layout</td></tr>
+    </tbody>
+  </table>`,
+  "<div class='text-green-400 font-semibold mt-4'>👑 Summary</div>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li><code>block</code> and <code>inline</code> = default types</li>" +
+  "<li><code>flex</code> = easy horizontal/vertical layout</li>" +
+  "<li><code>grid</code> = rows + columns (great for layout)</li>" +
+  "<li><code>none</code> = invisibility cloak 🧙‍♂️</li>" +
+  "</ul>",
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>Colors, Themes & Fonts</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>colors, themes, and fonts</code> in the terminal to continue.</div>",
+  " ",
+];
 
-    "🥇 Default Display Types",
-    "There are two major default types:",
-
-    "1. Block\nTakes full width available\nAlways starts on a new line\nExample elements: `&lt;div&gt;`, `&lt;p&gt;`, `&lt;h1&gt;`\ndisplay: block;",
-    "&lt;p&gt;Hello&lt;/p&gt;\n&lt;p&gt;World&lt;/p&gt;\n👆 They’ll be stacked on top of each other.",
-
-    "---",
-
-    "2. Inline\nTakes only as much width as needed\nCan sit beside other inline elements\nExample elements: `&lt;span&gt;`, `&lt;a&gt;`, `&lt;strong&gt;`\ndisplay: inline;",
-    "&lt;span&gt;Hello&lt;/span&gt; &lt;span&gt;World&lt;/span&gt;\n👆 They’ll appear side-by-side.",
-
-    "---",
-
-    "🥈 Modified Display Types (Game Changers)",
-
-    "3. Inline-Block\nSits beside others like `inline`\nBut allows you to set width, height, padding like `block`\ndisplay: inline-block;\nPerfect for buttons, badges, etc.",
-
-    "---",
-
-    "4. None\nLiterally disappears the element from the page (like hide-and-seek master).\ndisplay: none;",
-    "&lt;p class=\"bye\"&gt;You can't see me&lt;/p&gt;\n&lt;style&gt;\n  .bye {\n    display: none;\n  }\n&lt;/style&gt;",
-
-    "---",
-
-    "🌟 Flex — The Real MVP",
-    "5. Flex\nWelcome to layout paradise.\nFlexbox is powerful, responsive, and gives you control like magic.\ndisplay: flex;",
-    "By default, it makes children go side-by-side, like this:",
-    "&lt;div class=\"container\"&gt;\n  &lt;div&gt;One&lt;/div&gt;\n  &lt;div&gt;Two&lt;/div&gt;\n  &lt;div&gt;Three&lt;/div&gt;\n&lt;/div&gt;",
-    ".container {\n  display: flex;\n}",
-    "👆 All child `&lt;div&gt;`s now sit next to each other.",
-
-    "Bonus Flex Powers:",
-    "`justify-content` → controls horizontal space\n`align-items` → controls vertical alignment\n`gap` → adds space between items",
-    ".container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 20px;\n}",
-
-    "---",
-
-    "🧊 Grid — The Big Bro of Flex",
-    "6. Grid\nWant full control of rows + columns?\nUse:\ndisplay: grid;",
-    "It’s like designing your own board game layout:",
-    ".container {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 20px;\n}",
-    "You just made 3 equal-width columns.\nWant auto rows? Add `grid-auto-rows: 100px;`\nGrid is 💪 when building page layouts, dashboards, galleries, etc.",
-
-    "---",
-
-    "🧠 TL;DR: Common `display` Types",
-    "| Type           | What It Does                            |",
-    "| -------------- | --------------------------------------- |",
-    "| `block`        | Full-width, new line                    |",
-    "| `inline`       | Sits inline, width/height not respected |",
-    "| `inline-block` | Inline + can set width/height           |",
-    "| `none`         | Hides the element                       |",
-    "| `flex`         | Layout in a row/column with control     |",
-    "| `grid`         | Layout in rows + columns                |",
-
-    "---",
-
-    "👑 Summary\nUse `block` and `inline` to understand default behaviors\nUse `flex` for horizontal/vertical layout\nUse `grid` for structured rows and columns\n`none` = invisibility cloak 🧙‍♂️"
-
-]
 export const colorsFonts = [
-    "🎨 1. Colors — The Vibe Makers",
-    "🔹 Basic Color Names\nYou can literally write:\ncolor: red;\nbackground-color: black;\nBut we’re cooler than that 😎",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-1'>🎨 1. Colors — The Vibe Makers</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<p class='text-gray-200'>Colors give emotion to your website.</p>",
+  "<p class='text-gray-300'>Let’s spice up that boring black-and-white look 🌶️</p>",
+  "<div class='text-yellow-300 font-semibold mt-3'>🔹 Basic Color Names</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>color: red;
+background-color: black;
+</code>
+<p class='text-gray-400 italic mt-1'>But we’re cooler than that 😎</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-red-500 bg-black px-2 py-1 w-fit'>Red on Black</div>",
+  "<div class='text-yellow-300 font-semibold mt-3'>🔸 HEX Codes</div>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>color: #e74c3c;        /* Red */
+background: #2c3e50;   /* Dark Blue Gray */
+</code>
+<p class='text-gray-300'>HEX = <code>RRGGBB</code> from <code>00</code> (dark) to <code>FF</code> (bright)</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-[#e74c3c] bg-[#2c3e50] px-2 py-1 w-fit'>HEX Colors Applied</div>",
+  "<div class='text-yellow-300 font-semibold mt-3'>🔸 RGB & RGBA</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>color: rgb(255, 255, 255);   /* white */
+color: rgba(0, 0, 0, 0.7);   /* 70% black */</code>
+<p class='text-gray-300'><code>rgba</code> adds transparency — a = alpha</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-white bg-black/70 px-2 py-1 w-fit'>White on 70% Black</div>",
+  "<div class='text-yellow-300 font-semibold mt-3'>🔸 HSL & HSLA (for nerds)</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>color: hsl(0, 100%, 50%);        /* red */
+color: hsla(210, 50%, 40%, 0.9);
+</code>
+<p class='text-gray-300'>Control hue, saturation, and lightness separately 💡</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='text-[hsl(0,100%,50%)] bg-[hsla(210,50%,40%,0.9)] px-2 py-1 w-fit'>Red on Blueish</div>",
+  "<div class='text-pink-300 text-lg font-bold mb-2 mt-4'>🖋️ 2. Fonts — The Personality of Your Text</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<div class='text-yellow-300 font-semibold'>🔹 Font Family</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>font-family: 'Poppins', sans-serif;
+</code>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<p class='text-white font-[Poppins] text-lg'>This is Poppins Font</p>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 mt-2'>
+  <thead class='bg-[#353547] text-gray-200'>
+    <tr><th class='px-2 py-1 border border-gray-700'>Category</th><th class='px-2 py-1 border border-gray-700'>Examples</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class='px-2 py-1 border border-gray-700'>Serif</td><td class='px-2 py-1 border border-gray-700'>Times New Roman, Georgia</td></tr>
+    <tr><td class='px-2 py-1 border border-gray-700'>Sans-serif</td><td class='px-2 py-1 border border-gray-700'>Arial, Poppins, Roboto</td></tr>
+    <tr><td class='px-2 py-1 border border-gray-700'>Monospace</td><td class='px-2 py-1 border border-gray-700'>Courier New, Consolas</td></tr>
+    <tr><td class='px-2 py-1 border border-gray-700'>Cursive</td><td class='px-2 py-1 border border-gray-700'>Comic Sans (nooo), Pacifico</td></tr>
+  </tbody>
+</table>`,
+  "<p class='text-gray-300 mt-2'>🧠 Use <a href='https://fonts.google.com/' target='_blank' class='text-blue-400 underline'>Google Fonts</a> for fresh fonts.</p>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /&gt;
+</code>`,
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>body {
+  font-family: 'Roboto', sans-serif;
+}
+</code>`,
+  "<div class='text-yellow-300 font-semibold mt-3'>🔸 Font Size & Weight</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>font-size: 18px;       /* or try 1.2rem */
+font-weight: 700;      /* bold */
+</code>
+<p class='text-gray-300'>Use 100–900 scale or keywords like <code>normal</code>, <code>bold</code></p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<p class='text-white text-[18px] font-bold'>Bold & 18px</p>",
+  "<div class='text-yellow-300 font-semibold mt-3'>🔸 Line Height & Letter Spacing</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>line-height: 1.6;         /* readability */
+letter-spacing: 1px;      /* more breathing room */
+</code>
+<p class='text-green-300'>Perfect for headings & hero sections 💫</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<p class='text-white leading-[1.6] tracking-wider'>Spaced letters & smooth lines</p>",
+  "<div class='text-pink-300 text-lg font-bold mt-4'>🎨 3. Themes — Dark, Light & Beyond</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<p class='text-gray-200'>Want your site to match your mood? Go dark, light, or neon 🚀</p>",
+  "<div class='text-yellow-300 font-semibold mt-3'>💡 Light vs Dark Mode</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>&lt;body class="light"&gt;
+  &lt;h1&gt;Hello abcd&lt;/h1&gt;
+&lt;/body&gt;
+</code>`,
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>body.light {
+  background-color: #ffffff;
+  color: #222;
+}
+body.dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+</code>`,
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>function toggleTheme() {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+}
+</code>
+<p class='text-gray-300'>🎯 Just add a button — boom, theme toggles 🎉</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div class='bg-[#2f2f47] text-[#222] px-4 py-2 w-fit dark:bg-[#1e1e1e] dark:text-[#f1f1f1]'>Theme Preview</div>",
+  "<div class='text-yellow-300 font-semibold mt-3'>🌈 Bonus: CSS Variables for Theme Magic</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>:root {
+  --bg: #ffffff;
+  --text: #222222;
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+body.dark {
+  --bg: #000000;
+  --text: #eeeeee;
+}
+</code>
+<p class='text-gray-300'>No rewrites — just switch variables 🔄</p>`,
+  "<div class='mt-1 italic text-gray-400'>Output:</div>" +
+  "<div style='--bg: #ffffff; --text: #222222' class='px-4 py-2 w-fit' style='background-color: var(--bg); color: var(--text);'>Variable Based Theme</div>",
+  "<div class='text-green-400 font-semibold mt-4'>💡 TL;DR Recap</div>",
+  "<ul class='text-gray-300 list-disc list-inside space-y-1'>" +
+  "<li>🎨 Use <code>HEX</code>, <code>RGB</code>, <code>HSL</code> to play with color</li>" +
+  "<li>🖋️ Load modern fonts via Google Fonts</li>" +
+  "<li>🎚️ Adjust font size, spacing, and weight for perfect look</li>" +
+  "<li>🌗 Make light/dark themes using <code>class</code> or <code>CSS variables</code></li>" +
+  "</ul>",
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>CSS Element Control Squad</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>element control squad</code> in the terminal to continue.</div>",
 
-    "---",
-
-    "🔸 HEX Codes\ncolor: e74c3c;   / Red /\nbackground: 2c3e50; / Dark blue-gray /\n6 digits: `RRGGBB`\nFrom `00` (dark) to `FF` (bright)",
-
-    "---",
-
-    "🔸 RGB & RGBA\ncolor: rgb(255, 255, 255);     / white /\ncolor: rgba(0, 0, 0, 0.7);     / black with 70% opacity /\n`rgba` = add transparency (a = alpha)",
-
-    "---",
-
-    "🔸 HSL & HSLA (for nerds)\ncolor: hsl(0, 100%, 50%);      / red /\ncolor: hsla(210, 50%, 40%, 0.9);\nUseful when you want to change just lightness or saturation easily.",
-
-    "---",
-
-    "🖋️ 2. Fonts — The Personality of Your Text",
-
-    "🔹 Font Family\nfont-family: 'Poppins', sans-serif;",
-    "| Category   | Examples                          |\n| ---------- | --------------------------------- |\n| Serif      | Times New Roman, Georgia          |\n| Sans-serif | Arial, Helvetica, Poppins, Roboto |\n| Monospace  | Courier New, Consolas             |\n| Cursive    | Comic Sans (nooo), Pacifico       |",
-    "Use [Google Fonts](https://fonts.google.com/) for modern options.\nJust include this in your HTML `&lt;head&gt;`:\n&lt;link href=\"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap\" rel=\"stylesheet\"&gt;",
-    "And then use in CSS:\nbody {\n  font-family: 'Roboto', sans-serif;\n}",
-
-    "---",
-
-    "🔸 Font Size & Weight\nfont-size: 18px;        / or try 1.2rem /\nfont-weight: bold;      / or 100 to 900 /\n`bold`, `lighter`, `normal`\nor numeric values (400 = normal, 700 = bold)",
-
-    "---",
-
-    "🔸 Line Height & Letter Spacing\nline-height: 1.6;         / improves readability /\nletter-spacing: 1px;      / adds space between letters /\n✨ Great for headings and hero sections.",
-
-    "---",
-
-    "🎨 3. Themes — Dark, Light & Beyond\nWant your site to change mood like a Spotify skin?\nLet’s build a basic light/dark theme switcher idea.",
-
-    "---",
-
-    "💡 Light vs Dark Mode (Concept)",
-    "HTML:\n&lt;body class=\"light\"&gt;\n  &lt;h1&gt;Hello abcd&lt;/h1&gt;\n&lt;/body&gt;",
-    "CSS:\nbody.light {\n  background-color: ffffff;\n  color: 222;\n}\nbody.dark {\n  background-color: 1e1e1e;\n  color: f1f1f1;\n}",
-    "JavaScript toggle:\nfunction toggleTheme() {\n  document.body.classList.toggle(\"dark\");\n  document.body.classList.toggle(\"light\");\n}",
-    "🎯 Add a toggle button — boom, theme switch done!",
-
-    "---",
-
-    "🌈 Bonus: CSS Variables for Theme Magic",
-    ":root {\n  --bg: ffffff;\n  --text: 222222;\n}",
-    "body {\n  background-color: var(--bg);\n  color: var(--text);\n}",
-    "Then for dark theme:\nbody.dark {\n  --bg: 000000;\n  --text: eeeeee;\n}",
-    "This way, you don’t have to rewrite styles — just switch the variables 💅",
-
-    "---",
-
-    "💡 TL;DR Recap\n🎨 Use `HEX`, `RGB`, `HSL` for beautiful colors\n🖋️ Use modern fonts via Google Fonts\n🎚️ Adjust `font-size`, `weight`, `spacing` for elegance\n🌗 Create themes with class toggling or CSS variables"
+  " ",
 ];
+
 export const elementControlSquad = [
-    "👉 Position + Margin vs Padding + Borders & Shadows",
-    "Let’s call it: 'CSS Element Control Squad' 🧱✨",
-    "------------------------------",
-    "1️⃣ `position` – Where the heck should this element sit?\nBy default, every element is positioned as `static`, which means \"just go with the normal HTML flow.\"\nBut sometimes, you want to move things around like a boss 💪",
-
-    "🔸 `relative`\nMoves the element relative to itself\nDoesn’t affect surrounding elements\nposition: relative;\ntop: 20px;   / pushes the element down by 20px /\nleft: 10px;  / pushes the element to the right /\n👉 Still occupies the original space.",
-
-    "---",
-
-    "🔸 `absolute`\nMoves the element relative to the nearest positioned parent (`relative`, `absolute`, or `fixed`)\nGets pulled out of normal flow\nposition: absolute;\ntop: 0;\nright: 0;\n💡 Use inside a `relative` container if you want to place stuff in a corner.",
-
-    "---",
-
-    "🔸 `fixed`\nSticks to the viewport (screen) no matter how much you scroll.\nposition: fixed;\nbottom: 0;\nleft: 0;\n📌 Perfect for navbars, floating buttons.",
-
-    "---",
-
-    "🔸 `sticky`\nHybrid of `relative` and `fixed`\nStays in normal flow until a scroll point is hit\nposition: sticky;\ntop: 0;\n🔒 Great for sticky headers or section titles",
-
-    "---",
-
-    "2️⃣ Margin vs Padding – Know the difference once and for all",
-    "| Property  | What it controls                                        | Visual |\n| --------- | ------------------------------------------------------- | ------ |\n| `padding` | Space inside the element (between content & border) | 🧸     |\n| `margin`  | Space outside the element (between it and others)   | 🧱🧱   |",
-    "padding: 10px;\nmargin: 20px;",
-    "Think of:\n&gt; Padding = breathing space inside the box\n&gt; Margin = pushing other boxes away",
-    "Use this visual:\n[ margin [ border [ padding [ content ] ] ] margin ]",
-
-    "---",
-
-    "3️⃣ Borders, Border-Radius & Box-Shadow – Give your box some swag 💅",
-
-    "🔸 `border`\nborder: 2px solid 333;\nYou can control:\nWidth\nStyle (`solid`, `dashed`, `dotted`, etc.)\nColor",
-
-    "---",
-
-    "🔸 `border-radius` – Make corners soft like marshmallows 🍥\nborder-radius: 8px;\nMake a circle:\nwidth: 100px;\nheight: 100px;\nborder-radius: 50%;",
-
-    "---",
-
-    "🔸 `box-shadow` – Make elements pop\nbox-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);",
-    "Syntax:\nbox-shadow: X-offset Y-offset blur color;",
-    "Looks like:\n       [shadow]\n      +--------+\n      | Button |\n      +--------+",
-
-    "---",
-
-    "✅ Summary",
-    "| Feature         | Use For                        |\n| --------------- | ------------------------------ |\n| `position`      | Move or fix elements on screen |\n| `margin`        | Space outside element          |\n| `padding`       | Space inside element           |\n| `border`        | Outline the box                |\n| `border-radius` | Soften corners                 |\n| `box-shadow`    | Add depth, make it pop         |"
-
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-1'>👉 Position + Margin vs Padding + Borders & Shadows</div>",
+  "<div class='text-gray-200 mb-2'>Let’s call it: <span class='text-yellow-300'>'CSS Element Control Squad'</span> 🧱✨</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<div class='text-yellow-300 font-semibold mt-2'>1️⃣ `position` – Where the heck should this element sit?</div>",
+  "<p class='text-gray-300'>By default, every element is <code>static</code> — just go with the HTML flow. But if you want to move things like a boss 💪:</p>",
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `relative`</div>",
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li>Moves the element relative to itself</li>" +
+  "<li>Doesn’t affect surrounding elements</li>" +
+  "<li><code>top: 20px</code> → moves down | <code>left: 10px</code> → moves right</li>" +
+  "<li>✅ Still occupies original space</li>" +
+  "</ul>",
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `absolute`</div>",
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li>Relative to the nearest <code>positioned</code> parent</li>" +
+  "<li>Pulled out of normal flow</li>" +
+  "<li>Perfect for corner placement inside a <code>relative</code> container</li>" +
+  "</ul>",
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `fixed`</div>",
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li>Sticks to the screen, even while scrolling</li>" +
+  "<li>Great for navbars, floating buttons</li>" +
+  "</ul>",
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `sticky`</div>",
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li>Normal until you scroll to a point, then sticks</li>" +
+  "<li>Used for sticky headers</li>" +
+  "</ul>",
+  "<div class='text-yellow-300 font-semibold mt-3'>2️⃣ Margin vs Padding – Know the difference once and for all</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr>
+        <th class='py-1 px-2 border border-gray-700'>Property</th>
+        <th class='py-1 px-2 border border-gray-700'>What it controls</th>
+        <th class='py-1 px-2 border border-gray-700'>Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>padding</code></td><td class='py-1 px-2 border border-gray-700'>Space inside the element (between content & border)</td><td class='py-1 px-2 border border-gray-700'>🧸</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>margin</code></td><td class='py-1 px-2 border border-gray-700'>Space outside the element (between it and others)</td><td class='py-1 px-2 border border-gray-700'>🧱🧱</td></tr>
+    </tbody>
+  </table>`,
+  "<p class='text-gray-300'><code>padding: 10px;</code> | <code>margin: 20px;</code></p>",
+  "<p class='text-green-300 mt-1'>👉 Padding = breathing space inside</p>",
+  "<p class='text-pink-300'>👉 Margin = pushing other boxes away</p>",
+  "<p class='text-gray-400 italic'>Visual: [ margin [ border [ padding [ content ] ] ] margin ]</p>",
+  "<div class='text-yellow-300 font-semibold mt-3'>3️⃣ Borders, Radius & Shadow — Give your box some swag 💅</div>",
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `border`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>border: 2px solid #333;</code>
+<p class='text-gray-300'>Control:</p>`,
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li>Width</li>" +
+  "<li>Style: <code>solid</code>, <code>dashed</code>, <code>dotted</code></li>" +
+  "<li>Color</li>" +
+  "</ul>",
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `border-radius` — Soft corners 🍥</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>border-radius: 8px;</code>
+<p class='text-gray-300'>Make a circle:</p>
+<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>width: 100px;
+height: 100px;
+border-radius: 50%;
+</code>`,
+  "<div class='text-pink-400 font-medium mt-2'>🔸 `box-shadow` — Make elements pop 🎯</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</code>
+<p class='text-gray-300'>Syntax: <code>box-shadow: X-offset Y-offset blur color;</code></p>`,
+  "<div class='text-green-400 font-semibold mt-4'>✅ Summary</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Feature</th><th class='py-1 px-2 border border-gray-700'>Use For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>position</code></td><td class='py-1 px-2 border border-gray-700'>Move or fix elements on screen</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>margin</code></td><td class='py-1 px-2 border border-gray-700'>Space outside element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>padding</code></td><td class='py-1 px-2 border border-gray-700'>Space inside element</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>border</code></td><td class='py-1 px-2 border border-gray-700'>Outline the box</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>border-radius</code></td><td class='py-1 px-2 border border-gray-700'>Soften corners</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>box-shadow</code></td><td class='py-1 px-2 border border-gray-700'>Add depth, make it pop</td></tr>
+    </tbody>
+  </table>`,
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>Text Styling</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>text styling</code> in the terminal to continue.</div>",
+  " ",
 ];
+
 export const textStyling = [
-    "🖋️ 1️⃣ Text Styling — Because plain text is boring",
-    "------------------------------",
-    "🔸 `text-align`\nAlign your text like a boss:\ntext-align: left;   / default /\ntext-align: center;\ntext-align: right;\nGreat for:\n• Centering headings\n• Aligning paragraphs\n• Making things look neat",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-2'>🖋️ 1️⃣ Text Styling — Because plain text is boring</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<div class='text-yellow-300 font-semibold'>🔸 `text-align`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>text-align: left;     /* default */
+text-align: center;
+text-align: right;
+</code>
+<p class='text-gray-300 mt-1'>Great for:</p>
+• Centering headings<br/>
+• Aligning paragraphs<br/>
+• Making things look neat</p>
 
-    "---",
+<div class='bg-[#1e1e2f] text-gray-100 p-2 rounded mt-1'><p class='text-left'>Left aligned</p>
+<p class='text-center'>Center aligned</p>
+<p class='text-right'>Right aligned</p>
+</div>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold'>🔸 `line-height`</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>line-height: 1.2;</code>
+<p class='text-gray-300'>Helpful for longer paragraphs so readers don’t feel like they’re drowning 🫠</p>
+<div class='bg-[#1e1e2f] text-gray-300 p-3 rounded leading-[1.2] mt-2'>Lorem ipsum dolor sit amet,<br/>consectetur adipiscing elit.<br/>Curabitur sit amet elit sed nulla tempus fermentum.
+</div>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold'>🔸 `letter-spacing`</div>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>letter-spacing: 1px;</code>
+<p class='text-gray-300'>Use with uppercase headings to make them look dramatic 🧢</p>
+<div class='bg-[#1e1e2f] text-gray-100 p-3 rounded tracking-wider uppercase mt-2'>spaced letters look bold</div>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold'>🔸 `text-transform`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>text-transform: uppercase;   /* ALL CAPS */
+text-transform: lowercase;   /* all lowercase */
+text-transform: capitalize;  /* First Letter Of Every Word */</code>
+<p class='text-gray-300'>One CSS line = total attitude shift 💅</p>
+<div class='bg-[#1e1e2f] text-gray-100 p-3 rounded mt-2'><p class='uppercase'>uppercase</p>
+<p class='lowercase'>LOWERCASE</p>
+<p class='capitalize'>capitalized sentence</p>
+</div>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold'>🔸 `text-decoration`</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>text-decoration: none;         /* removes underline */
+text-decoration: underline;    /* adds underline */
+text-decoration: line-through; /* strike-through */</code>
+<div class='bg-[#1e1e2f] text-gray-100 p-3 rounded mt-2'><p class='no-underline'>No Underline (Default)</p>
+<p class='underline'>Underlined</p>
+<p class='line-through'>Strikethrough</p>
+</div>`,
+  " ",
+  "<div class='text-pink-300 font-semibold'>🧠 Pro Combo</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}</code>
+<p class='text-green-300 mt-1'>👑 Royal heading unlocked!</p>
+<div class='bg-[#1e1e2f] text-gray-100 p-3 rounded mt-2'><h1 class='text-center uppercase tracking-widest font-bold'>This is Royal</h1></div>`,
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mt-4'>🖱️ 2️⃣ Hover & Active — Add life to your UI</div>",
+  "<div class='text-yellow-300 font-semibold'>🔸 `:hover`</div>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>button:hover {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}</code>
+<p class='text-gray-300'>✨ Great for:</p>
+• Buttons
+• Links
+• Cards
 
-    "🔸 `line-height`\nAdd breathing room between lines:\nline-height: 1.6;\nHelpful for longer paragraphs so readers don’t feel like they’re drowning 🫠",
+<div class='bg-[#1e1e2f] text-gray-100 p-3 rounded mt-2'><button class='px-4 py-2 bg-pink-400 hover:bg-[#333] hover:text-white rounded transition'>Hover Me</button></div>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold'>🔸 `:active`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>button:active {
+  transform: scale(0.97);
+}</code>
+<p class='text-gray-300'>Gives that clicky feeling 🔘</p>
+<div class='bg-[#1e1e2f] text-gray-100 p-3 rounded mt-2'><button class='px-4 py-2 bg-blue-400 active:scale-95 transition rounded'>Click Me</button></div>`,
+  " ",
+  "<div class='text-yellow-300 font-semibold'>🧠 Bonus: Smooth it out</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>button {
+  transition: all 0.2s ease;
+}</code>
+<p class='text-gray-300'>Hover/active effects now glide like butter 🧈</p>`,
+  " ",
+  "<div class='text-green-400 font-semibold mt-4'>✅ Summary</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Property</th><th class='py-1 px-2 border border-gray-700'>Use For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>text-align</code></td><td class='py-1 px-2 border border-gray-700'>Aligning text</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>line-height</code></td><td class='py-1 px-2 border border-gray-700'>Space between lines</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>letter-spacing</code></td><td class='py-1 px-2 border border-gray-700'>Space between letters</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>text-transform</code></td><td class='py-1 px-2 border border-gray-700'>Capitalization styles</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>text-decoration</code></td><td class='py-1 px-2 border border-gray-700'>Underlines, strike-throughs</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>:hover</code></td><td class='py-1 px-2 border border-gray-700'>Styling on mouse-over</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>:active</code></td><td class='py-1 px-2 border border-gray-700'>Styling on click</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>transition</code></td><td class='py-1 px-2 border border-gray-700'>Smooth animations</td></tr>
+    </tbody>
+  </table>`,
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>Flexbox</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>flexbox</code> in the terminal to continue.</div>",
 
-    "---",
-
-    "🔸 `letter-spacing`\nGive letters some space:\nletter-spacing: 1px;\nUse with uppercase headings to make them look dramatic 🧢",
-
-    "---",
-
-    "🔸 `text-transform`\ntext-transform: uppercase;  / Makes all letters BIG /\ntext-transform: lowercase;  / makes all small /\ntext-transform: capitalize; / First Letter Of Every Word /\nOne CSS line = total attitude shift.",
-
-    "---",
-
-    "🔸 `text-decoration`\nMostly used to remove that ugly underline from links:\ntext-decoration: none;\nAlso:\ntext-decoration: underline;\ntext-decoration: line-through;",
-
-    "---",
-
-    "🧠 Pro Tip: Combine for magic",
-    "h1 {\n  text-align: center;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n  font-weight: bold;\n}",
-
-    "---",
-
-    "🖱️ 2️⃣ Hover & Active — Add life to your UI",
-
-    "🔸 `:hover`\nTriggered when the mouse hovers over an element.\nbutton:hover {\n  background-color: 333;\n  color: fff;\n  cursor: pointer;\n}\n✨ Great for:\n• Buttons\n• Links\n• Cards",
-
-    "---",
-
-    "🔸 `:active`\nTriggered when the element is being clicked.\nbutton:active {\n  transform: scale(0.97);\n}\nGives that clicky feeling 🔘",
-
-    "---",
-
-    "🧠 Bonus: Smooth the hover with `transition`\nbutton {\n  transition: all 0.2s ease;\n}\nMakes the hover/active effects smooth like butter 🧈",
-
-    "---",
-
-    "✅ Summary",
-    "| Property          | Use For                        |\n| ----------------- | ------------------------------ |\n| `text-align`      | Aligning text                  |\n| `line-height`     | Space between lines            |\n| `letter-spacing`  | Space between letters          |\n| `text-transform`  | Capitalization styles          |\n| `text-decoration` | Underlines, strike-throughs    |\n| `:hover`          | Styling on mouse-over          |\n| `:active`         | Styling on click               |\n| `transition`      | Smooth hover/active animations |"
-
+  " ",
 ];
+
 export const flexbox = [
-    "🧱 Flexbox – Your CSS Superpower for Layouts\nFlexbox is a layout model that makes it easy to align items, space them out, and build responsive layouts — without losing your mind 😵‍💫",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-2'>🧱 Flexbox – Your CSS Superpower for Layouts</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<p class='text-gray-300'>Flexbox is a layout model that makes it easy to align items, space them out, and build responsive layouts — without losing your mind 😵‍💫</p>",
 
-    "---",
+  "<div class='text-yellow-300 font-semibold'>🧩 Step 1: Make a container flexible</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>.container {
+  display: flex;
+}</code>
+<p class='text-gray-300'>Boom — now all direct children inside <code>.container</code> become flex items.</p>
+<div class='flex gap-2 mt-2'>
+  <div class='bg-pink-500 px-3 py-1 rounded'>Item 1</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded'>Item 2</div>
+  <div class='bg-green-500 px-3 py-1 rounded'>Item 3</div>
+</div>
+`,
 
-    "🧩 Step 1: Make a container flexible\n.container {\n  display: flex;\n}\nBoom — now all direct children inside `.container` become flex items.",
+  "<div class='text-pink-300 font-bold text-base mt-2'>🔸 Main Flex Properties (for container)</div>",
 
-    "---",
+  "<div class='text-yellow-300 font-semibold mt-2'>1️⃣ `flex-direction`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>flex-direction: row;       /* default – side by side */
+flex-direction: column;    /* stacked vertically */
+</code>
+<p class='text-gray-300'>📐 Helps build horizontal menus, vertical lists, etc.</p>
+<div class='flex flex-col gap-2 mt-2'>
+  <div class='bg-pink-500 px-3 py-1 rounded'>Item A</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded'>Item B</div>
+  <div class='bg-green-500 px-3 py-1 rounded'>Item C</div>
+</div>
+`,
+  "<div class='text-yellow-300 font-semibold'>2️⃣ `justify-content`</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>justify-content: space-between;
+</code>
+<p class='text-gray-300'>🎯 Think: “Where should my items go on the X-axis?”</p>
+<div class='flex justify-between bg-[#2f2f47] p-2 rounded mt-2'>
+  <div class='bg-pink-500 px-3 py-1 rounded'>Left</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded'>Middle</div>
+  <div class='bg-green-500 px-3 py-1 rounded'>Right</div>
+</div>
+`,
 
-    "🔸 Main Flex Properties (for container)",
+  "<div class='text-yellow-300 font-semibold'>3️⃣ `align-items`</div>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>align-items: flex-end;
+</code>
+<p class='text-gray-300'>🎯 Think: “How should they behave on the Y-axis?”</p>
+<div class='flex items-end h-24 gap-2 bg-[#2f2f47] p-2 mt-2 rounded'>
+  <div class='bg-pink-500 px-3 py-1 rounded self-start'>Top</div>
+  <div class='bg-yellow-500 px-3 py-4 rounded'>Middle</div>
+  <div class='bg-green-500 px-3 py-8 rounded'>Bottom</div>
+</div>
+`,
+  "<div class='text-yellow-300 font-semibold'>4️⃣ `gap`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>gap: 1rem;</code>
+<p class='text-gray-300'>🚫 No more using margin on every item — just add <code>gap</code>.</p>
+<div class='flex gap-4 mt-2'>
+  <div class='bg-pink-500 px-3 py-1 rounded'>1</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded'>2</div>
+  <div class='bg-green-500 px-3 py-1 rounded'>3</div>
+</div>
+`,
+  "<div class='text-pink-300 font-bold text-base mt-2'>🧸 Flex Item Properties (for children)</div>",
+  "<div class='text-yellow-300 font-semibold'>1️⃣ `flex-grow`</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>.item {
+  flex-grow: 1;
+}
+</code>
+<p class='text-gray-300'>📈 If all items have <code>flex-grow: 1</code>, they divide the space equally.</p>
+<div class='flex gap-2 mt-2'>
+  <div class='bg-pink-500 px-3 py-1 rounded flex-grow'>Grow 1</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded flex-grow'>Grow 2</div>
+</div>
+`,
 
-    "1️⃣ `flex-direction`\nControls direction of the items:\nflex-direction: row;       / default – side by side (horizontal) /\nflex-direction: column;    / stacked (vertical) /\n📐 Helps build horizontal menus, vertical lists, etc.",
+  "<div class='text-yellow-300 font-semibold'>2️⃣ `flex-shrink`</div>",
+  `<code class='bg-[#2f2f47] text-blue-300 text-sm px-2 py-1 rounded block w-fit'>.item {
+  flex-shrink: 1;
+}</code>
+<p class='text-gray-300'>📉 Controls how much an item shrinks if space is tight.</p>
+<p class='text-gray-400 italic'>Harder to show visually — best tested in dev tools with resizing.</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>3️⃣ `flex-basis`</div>",
+  `<code class='bg-[#2f2f47] text-pink-300 text-sm px-2 py-1 rounded block w-fit'>.item {
+  flex-basis: 200px;
+}</code>
+<p class='text-gray-300'>📐 Defines the starting size before it flexes.</p>
+<div class='flex gap-2 mt-2'>
+  <div class='bg-pink-500 px-3 py-1 rounded basis-1/4'>Basis 25%</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded basis-1/2'>Basis 50%</div>
+</div>
+`,
+  "<div class='text-yellow-300 font-semibold'>4️⃣ `align-self`</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>.item {
+  align-self: center;
+}</code>
+<p class='text-gray-300'>🎯 Overrides the <code>align-items</code> value for just one item.</p>
+<div class='flex items-start h-24 bg-[#2f2f47] p-2 gap-2 mt-2 rounded'>
+  <div class='bg-pink-500 px-3 py-1 rounded'>Top</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded self-center'>Center</div>
+  <div class='bg-green-500 px-3 py-1 rounded'>Top</div>
+</div>
+`,
+  "<div class='text-green-300 font-semibold'>🧠 Real-world Example</div>",
+  `<pre class='bg-[#2f2f47] text-blue-200 text-sm p-3 rounded overflow-x-auto'>
+&lt;div class="navbar"&gt;
+  &lt;div&gt;Logo&lt;/div&gt;
+  &lt;div&gt;Links&lt;/div&gt;
+  &lt;div&gt;Button&lt;/div&gt;
+&lt;/div&gt;
 
-    "---",
-
-    "2️⃣ `justify-content`\nControls horizontal alignment (when `flex-direction: row`):\njustify-content: flex-start;   / default /\njustify-content: center;\njustify-content: flex-end;\njustify-content: space-between;\njustify-content: space-around;\njustify-content: space-evenly;\n🎯 Think: “where should my items go on the X-axis?”",
-
-    "---",
-
-    "3️⃣ `align-items`\nControls vertical alignment (when `flex-direction: row`):\nalign-items: flex-start;\nalign-items: center;\nalign-items: flex-end;\n🎯 Think: “how should they behave on the Y-axis?”",
-
-    "---",
-
-    "4️⃣ `gap`\nAdds space between items:\ngap: 1rem;\nNo more using margin on every item — just add `gap`.",
-
-    "---",
-
-    "🧸 Flex Item Properties (for children)",
-
-    "1️⃣ `flex-grow`\nDefines how much an item should grow relative to others.\n.item {\n  flex-grow: 1;\n}\nIf all items have `flex-grow: 1`, they divide the space equally.",
-
-    "---",
-
-    "2️⃣ `flex-shrink`\nDefines how much it should shrink when needed.\n.item {\n  flex-shrink: 1;\n}\nUsually safe to leave this as default.",
-
-    "---",
-
-    "3️⃣ `flex-basis`\nDefines the initial size of an item before flexing.\n.item {\n  flex-basis: 200px;\n}",
-
-    "---",
-
-    "4️⃣ `align-self`\nOverrides `align-items` for one single item.\n.item {\n  align-self: center;\n}",
-
-    "---",
-
-    "🧠 Real-world Example:\n&lt;div class=\"navbar\"&gt;\n  &lt;div&gt;Logo&lt;/div&gt;\n  &lt;div&gt;Links&lt;/div&gt;\n  &lt;div&gt;Button&lt;/div&gt;\n&lt;/div&gt;\n.navbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n📸 Result: Logo left, Links center/right, Button far right — all aligned neatly.",
-
-    "---",
-
-    "✅ Summary",
-    "| Property          | Use For                          |\n| ----------------- | -------------------------------- |\n| `display: flex`   | Makes a container flexible       |\n| `flex-direction`  | Row vs Column layout             |\n| `justify-content` | Align on main axis (X or Y)      |\n| `align-items`     | Align on cross axis (Y or X)     |\n| `gap`             | Space between items              |\n| `flex-grow`       | Items grow proportionally        |\n| `flex-shrink`     | Items shrink when needed         |\n| `flex-basis`      | Base size of an item             |\n| `align-self`      | Individual alignment override    |"
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</pre>
+<div class='flex justify-between items-center bg-[#2f2f47] p-2 mt-2 rounded'>
+  <div class='bg-pink-500 px-3 py-1 rounded'>Logo</div>
+  <div class='bg-yellow-500 px-3 py-1 rounded'>Links</div>
+  <div class='bg-green-500 px-3 py-1 rounded'>Button</div>
+</div>
+<p class='text-gray-300'>📸 Result: Logo left, Links center, Button right — all aligned neatly.</p>
+`,
+  "<div class='text-green-400 font-semibold mt-4'>✅ Summary</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Property</th><th class='py-1 px-2 border border-gray-700'>Use For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>display: flex</code></td><td class='py-1 px-2 border border-gray-700'>Makes a container flexible</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>flex-direction</code></td><td class='py-1 px-2 border border-gray-700'>Row vs Column layout</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>justify-content</code></td><td class='py-1 px-2 border border-gray-700'>Align on main axis (X or Y)</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>align-items</code></td><td class='py-1 px-2 border border-gray-700'>Align on cross axis (Y or X)</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>gap</code></td><td class='py-1 px-2 border border-gray-700'>Space between items</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>flex-grow</code></td><td class='py-1 px-2 border border-gray-700'>Items grow proportionally</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>flex-shrink</code></td><td class='py-1 px-2 border border-gray-700'>Items shrink when needed</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>flex-basis</code></td><td class='py-1 px-2 border border-gray-700'>Base size of an item</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'><code>align-self</code></td><td class='py-1 px-2 border border-gray-700'>Individual alignment override</td></tr>
+    </tbody>
+  </table>`,
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>CSS Units</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>units</code> in the terminal to continue.</div>",
+  " ",
 ];
+
 export const units = [
-    "🎯 Units in CSS — How you measure stuff (like a frontend architect 🧱📏)\nDifferent units = different superpowers.\nLet’s break it down:",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-2'>🎯 Units in CSS — Measuring Like a Frontend Architect 📏</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<p class='text-gray-300'>Different units = different superpowers. Let’s break it down:</p>",
+  "<div class='text-yellow-300 font-semibold'>🔹 Absolute Units</div>",
+  "<p class='text-gray-300'>These stay fixed. They don’t adapt to screen size.</p>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Unit</th><th class='py-1 px-2 border border-gray-700'>Description</th><th class='py-1 px-2 border border-gray-700'>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'>px</td><td class='py-1 px-2 border border-gray-700'>Pixels (most common)</td><td class='py-1 px-2 border border-gray-700'>font-size: 16px;</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>pt</td><td class='py-1 px-2 border border-gray-700'>Points (used in print)</td><td class='py-1 px-2 border border-gray-700'>font-size: 12pt;</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>cm, mm, in</td><td class='py-1 px-2 border border-gray-700'>Physical units (printers)</td><td class='py-1 px-2 border border-gray-700'>–</td></tr>
+    </tbody>
+  </table><p class='text-green-300'>✅ Use when you want fixed precision regardless of device.</p>
+  `,
+  `<div class='bg-[#2f2f47] p-4 rounded my-3 text-white'>
+    <p style='font-size: 16px;'>This text is 16px (using px)</p>
+    <p style='font-size: 12pt;'>This text is 12pt (used in print)</p>
+  </div>
+  `,
+  "<div class='text-yellow-300 font-semibold'>🔹 Relative Units</div>",
+  "<p class='text-gray-300'>These scale with the parent, root, or screen size. Perfect for responsive design.</p>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Unit</th><th class='py-1 px-2 border border-gray-700'>Based On</th><th class='py-1 px-2 border border-gray-700'>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'>%</td><td class='py-1 px-2 border border-gray-700'>Parent size</td><td class='py-1 px-2 border border-gray-700'>width: 50%;</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>em</td><td class='py-1 px-2 border border-gray-700'>Parent font-size</td><td class='py-1 px-2 border border-gray-700'>1em = parent size</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>rem</td><td class='py-1 px-2 border border-gray-700'>Root font-size (16px)</td><td class='py-1 px-2 border border-gray-700'>1rem = 16px</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>vw</td><td class='py-1 px-2 border border-gray-700'>1% of viewport width</td><td class='py-1 px-2 border border-gray-700'>width: 50vw;</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>vh</td><td class='py-1 px-2 border border-gray-700'>1% of viewport height</td><td class='py-1 px-2 border border-gray-700'>height: 100vh;</td></tr>
+    </tbody>
+  </table><p class='text-green-300'>✅ Use for screens that resize or when working with fluid layouts.</p>
+  `,
+  `<div class='bg-[#2f2f47] p-4 rounded my-3 text-white w-full'>
+    <div style='font-size: 1rem;'>Font size 1rem (16px default)</div>
+    <div style='width: 50%; background: #000;'>Width: 50%</div>
+    <div style='width: 50vw; background: #000;'>Width: 50vw</div>
+  </div>
+  `,
+  "<div class='text-blue-400 font-semibold'>🧠 Real Talk</div>",
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li><code class='text-pink-300'>px</code> → Good for shadows, borders, fine-tuned spacing</li>" +
+  "<li><code class='text-pink-300'>rem</code> → Ideal for font sizes (scales nicely)</li>" +
+  "<li><code class='text-pink-300'>%</code>, <code class='text-pink-300'>vw</code>, <code class='text-pink-300'>vh</code> → Perfect for layout and responsiveness</li>" +
+  "</ul>",
+  " ",
+  "<div class='text-yellow-300 font-semibold'>📱 Responsive Design — Enter `@media` Queries</div>",
+  "<p class='text-gray-300'>Media queries help your layout adjust for mobile, tablet, or desktop.</p>",
+  "<div class='text-pink-300 font-semibold'>🔸 What is a Media Query?</div>",
+  `<code class='bg-[#2f2f47] text-green-300 text-sm px-2 py-1 rounded block w-fit'>@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+</code>
+<p class='text-gray-300'>👆 Means: “When the screen is 768px or smaller, stack navbar items vertically.”</p>
+`,
+  `<div class='bg-[#2f2f47] p-4 rounded my-3 text-black'>
+    <div class='flex justify-between items-center gap-2'>
+      <div class='bg-gray-300 p-2 rounded'>Logo</div>
+      <div class='bg-gray-400 p-2 rounded'>Links</div>
+      <div class='bg-gray-500 p-2 rounded'>Button</div>
+    </div>
+    <p class='text-xs mt-2 text-white'>(Try resizing the screen to simulate the effect)</p>
+  </div>
+  `,
+  "<div class='text-pink-300 font-semibold'>🔸 Common Breakpoints</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Device</th><th class='py-1 px-2 border border-gray-700'>Width</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'>Mobile</td><td class='py-1 px-2 border border-gray-700'>max-width: 480px</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>Tablet</td><td class='py-1 px-2 border border-gray-700'>max-width: 768px</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>Laptop/Desktop</td><td class='py-1 px-2 border border-gray-700'>min-width: 1024px</td></tr>
+    </tbody>
+  </table>
+  `,
+  "<div class='text-pink-300 font-semibold'>🔸 Example Use-Case</div>",
+  `<pre class='bg-[#2f2f47] text-blue-200 text-sm p-3 rounded overflow-x-auto'>.card {
+  width: 400px;
+}
 
-    "---",
-
-    "🔹 Absolute Units\nThese don’t care about screen size — they stay fixed.",
-    "| Unit             | Description                          | Example            |\n| ---------------- | ------------------------------------ | ------------------ |\n| `px`             | Pixels (most common)                 | `font-size: 16px;` |\n| `pt`             | Points (used in print)               | `12pt`             |\n| `cm`, `mm`, `in` | Physical units (for printers mostly) |                    |\n✅ Use when: You want precise size regardless of device.",
-
-    "---",
-
-    "🔹 Relative Units\nThese scale based on parent, root, or viewport. Best for responsive design.",
-    "| Unit  | Based On                      | Example             |\n| ----- | ----------------------------- | ------------------- |\n| `%`   | Parent size                   | `width: 50%;`       |\n| `em`  | Parent font-size              | `1em = parent size` |\n| `rem` | Root font-size (usually 16px) | `1rem = 16px`       |\n| `vw`  | 1% of viewport width          | `width: 50vw;`      |\n| `vh`  | 1% of viewport height         | `height: 100vh;`    |\n✅ Use when: You want things to adapt to different screens.",
-
-    "---",
-
-    "🧠 Real Talk:\nUse `px` for borders, shadows, specific spacing\nUse `rem` for font sizes (easy scaling)\nUse `%`, `vw`, `vh` for layouts that feel responsive",
-
-    "---",
-
-    "📱 Responsive Design — Make your site fit everywhere\nYour website shouldn’t break on mobile.\nEnter the hero: `@media` queries 🦸‍♀️",
-
-    "---",
-
-    "🔸 What is a Media Query?\nIt tells the browser:\n“If the screen is this size, apply these styles.”\n@media (max-width: 768px) {\n  .navbar {\n    flex-direction: column;\n  }\n}\n👆 This says:\n“When screen is 768px or smaller, stack navbar items vertically.”",
-
-    "---",
-
-    "🔸 Common Breakpoints (not fixed, just popular)",
-    "| Device         | Width (px)          |\n| -------------- | ------------------- |\n| Mobile         | `max-width: 480px`  |\n| Tablet         | `max-width: 768px`  |\n| Laptop/Desktop | `min-width: 1024px` |",
-
-    "---",
-
-    "🔸 Example Use-Case\n.card {\n  width: 400px;\n}\n@media (max-width: 600px) {\n  .card {\n    width: 90%;\n  }\n}\n💡 Now `.card` will shrink on small screens instead of overflowing!",
-
-    "---",
-
-    "🧠 Tips:\n• Combine `flex` + `media queries` = magical responsive UI\n• Always check on at least 3 sizes: mobile, tablet, desktop\n• Use browser dev tools (responsive mode) to test quickly",
-
-    "---",
-
-    "✅ Summary",
-    "| Concept     | Use For                            |\n| ----------- | ---------------------------------- |\n| `px`        | Fixed size (pixels)                |\n| `em`, `rem` | Scale based on font sizes          |\n| `%`         | Relative to parent                 |\n| `vw`, `vh`  | Relative to viewport               |\n| `@media`    | Change styles based on screen size |\n| `max-width` | Apply styles for smaller screens   |\n| `min-width` | Apply styles for larger screens    |\nThat’s how you make your designs adapt like a chameleon 🦎📱💻🖥️"
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}
+</pre>
+<p class='text-gray-300'>💡 On small screens, the card shrinks to fit better instead of overflowing!</p>
+`,
+  `<div class='bg-[#2f2f47] text-white p-3 rounded w-[400px] max-w-full'>
+    <div class='bg-black p-3 text-center'>Card (400px, but responsive below 600px)</div>
+  </div>
+  `,
+  "<div class='text-green-300 font-semibold'>🧠 Tips</div>",
+  "<ul class='list-disc list-inside text-gray-300 space-y-1'>" +
+  "<li>Use <code class='text-pink-300'>flex</code> + <code class='text-pink-300'>media queries</code> together for smooth UIs</li>" +
+  "<li>Check mobile, tablet, and desktop views</li>" +
+  "<li>Test quickly using browser dev tools</li>" +
+  "</ul>",
+  "<div class='text-green-400 font-semibold'>✅ Summary</div>",
+  `<table class='w-full text-sm text-left border border-gray-700 text-gray-100 my-2'>
+    <thead class='bg-[#353547] text-gray-200'>
+      <tr><th class='py-1 px-2 border border-gray-700'>Concept</th><th class='py-1 px-2 border border-gray-700'>Use For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class='py-1 px-2 border border-gray-700'>px</td><td class='py-1 px-2 border border-gray-700'>Fixed size (pixels)</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>em, rem</td><td class='py-1 px-2 border border-gray-700'>Scaling font sizes</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>%</td><td class='py-1 px-2 border border-gray-700'>Relative to parent</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>vw, vh</td><td class='py-1 px-2 border border-gray-700'>Responsive to viewport</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>@media</td><td class='py-1 px-2 border border-gray-700'>Responsive breakpoints</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>max-width</td><td class='py-1 px-2 border border-gray-700'>Style for smaller screens</td></tr>
+      <tr><td class='py-1 px-2 border border-gray-700'>min-width</td><td class='py-1 px-2 border border-gray-700'>Style for larger screens</td></tr>
+    </tbody>
+  </table><p class='text-gray-300'>That’s how your designs adapt like a chameleon 🦎📱💻🖥️</p>`,
+  "<div class='text-blue-400 italic text-sm mt-4'>🔁 Next up: <span class='font-semibold text-yellow-300'>CSS Best Practices</span></div>",
+  "<div class='text-gray-400 text-sm italic'>👉 Type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>best practices</code> in the terminal to continue.</div>",
+  " ",
 ];
+
 export const best = [
-    "🎯 CSS Best Practices — Write it Clean, Make it Shine ✨",
-    "---",
+  " ",
+  "<div class='text-pink-300 text-lg font-bold mb-2'>🎯 CSS Best Practices — Write it Clean, Make it Shine ✨</div>",
+  "<div class='border-b border-pink-400/40 mb-4'></div>",
+  "<div class='text-yellow-300 font-semibold'>✅ 1️⃣ Use Meaningful Class Names</div>",
+  "<p class='text-gray-300'>Don’t be that <code>.a1</code>, <code>.redBox</code>, or <code>.thingy</code>. Use names that explain the <span class='text-green-300'>role</span>, not how they look.</p>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>&lt;!-- ❌ Bad --&gt;&lt;div class="blue-text"&gt;&lt;/div&gt;
+&lt;!-- ✅ Good --&gt;&lt;div class="alert-message"&gt;&lt;/div&gt;
+</pre>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 2️⃣ Keep It DRY (Don't Repeat Yourself)</div>",
+  "<p class='text-gray-300'>Avoid repeating the same styles. Reuse with class abstraction.</p>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>/* ❌ Redundant */
+.card1 {
+  padding: 20px;
+  border-radius: 8px;
+}
+.card2 {
+  padding: 20px;
+  border-radius: 8px;
+}
 
-    "✅ 1️⃣ Use Meaningful Class Names\nDon’t be that `.a1`, `.redBox`, or `.thingy`.\nUse names that explain the role, not how they look.\n&lt;!-- ❌ Bad --&gt;\n&lt;div class=\"blue-text\"&gt;&lt;/div&gt;\n&lt;!-- ✅ Good --&gt;\n&lt;div class=\"alert-message\"&gt;&lt;/div&gt;",
+/* ✅ Reusable */
+.card {
+  padding: 20px;
+  border-radius: 8px;
+}
+</pre>
+<p class='text-green-300'>💡 Tip: Use Tailwind or BEM when your project scales.</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 3️⃣ Use a Consistent Unit System</div>",
+  "<p class='text-gray-300'>Mixing <code>px</code>, <code>%</code>, <code>em</code>, <code>rem</code> = chaos.</p>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>⛔ Don’t do:
+font-size: 16px;
+padding: 2rem;
+margin: 10%;
 
-    "---",
+✅ Do:
+font-size: 1rem;
+padding: 1.25rem;
+margin: 1rem;
+</pre>
+<p class='text-green-300'>Stick to 1–2 unit types for consistency (like <code>rem</code> for fonts, <code>%</code> or <code>px</code> for layout).</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 4️⃣ Always Reset or Normalize Styles</div>",
+  "<p class='text-gray-300'>Browsers have wild default styles. Reset it like a pro:</p>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</pre>
+<p class='text-green-300'>Or use Normalize.css or Tailwind’s preflight.</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 5️⃣ Don’t Over-Nest in CSS</div>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>/* ❌ Too much */
+body .container .box .text .highlight .hovered-text {}
 
-    "✅ 2️⃣ Keep It DRY (Don't Repeat Yourself)\nAvoid repeating the same styles over and over.\n/ ❌ Redundant /\n.card1 {\n  padding: 20px;\n  border-radius: 8px;\n}\n.card2 {\n  padding: 20px;\n  border-radius: 8px;\n}\n/ ✅ Reusable /\n.card {\n  padding: 20px;\n  border-radius: 8px;\n}\n💡 Tip: Use utility-first classes (like Tailwind) or BEM if things grow big.",
+/* ✅ Clean */
+.highlight {
+  color: yellow;
+}
+</pre>
+<p class='text-gray-300'>Keep it shallow, simple, and maintainable 🔍</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 6️⃣ Comment Wisely ✍️</div>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>/* ===== Header Styling ===== */
+.header { ... }
 
-    "---",
+/* Fix for iOS Safari bug */
+.some-class {
+  -webkit-overflow-scrolling: touch;
+}
+</pre>
+<p class='text-gray-300'>Don't comment obvious stuff. Use them to explain hacks or structure.</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 7️⃣ Mobile First, Always</div>",
+  "<p class='text-gray-300'>Start for small screens and scale up — phones are the default now 📱</p>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>.card {
+  width: 100%;
+}
 
-    "✅ 3️⃣ Use a Consistent Unit System\nMixing `px`, `%`, `em`, `rem` everywhere = chaos.\n⛔ Don’t do:\nfont-size: 16px;\npadding: 2rem;\nmargin: 10%;\n✅ Pick 1–2 and stick with them (e.g., `rem` for fonts, `%`/`px` for layout).",
+@media (min-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+</pre>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 8️⃣ Don’t Inline Everything</div>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>&lt;!-- ❌ --&gt;
+&lt;div&gt; style="color: red;"&gt;&lt;/div&gt;
 
-    "---",
-
-    "✅ 4️⃣ Always Reset or Normalize Styles\nBrowsers come with weird default CSS.\nAdd this at the top of your CSS file to start clean:\n{\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nOr use a full reset/normalize library.",
-
-    "---",
-
-    "✅ 5️⃣ Don’t Over-Nest in CSS\nAvoid crazy deep selectors like:\nbody .container .box .text .highlight .hovered-text { ... }\n💀 Painful to debug. Instead, simplify:\n.highlight {\n  color: yellow;\n}",
-
-    "---",
-
-    "✅ 6️⃣ Comment Wisely ✍️\nUse comments to mark sections or explain hacks.\n/ ===== Header Styling ===== /\n.header { ... }\n/ Fix for iOS Safari weirdness /\n.some-class {\n  -webkit-overflow-scrolling: touch;\n}\nBut don’t over-comment obvious things.",
-
-    "---",
-
-    "✅ 7️⃣ Mobile First, Always\nStart writing CSS for small screens, then scale up.\n.card {\n  width: 100%;\n}\n@media (min-width: 768px) {\n  .card {\n    width: 50%;\n  }\n}\n💡 Phones are everywhere. Start from there.",
-
-    "---",
-
-    "✅ 8️⃣ Don’t Inline Everything\nAvoid styles inside HTML unless it’s a one-time experiment.\n&lt;!-- ❌ --&gt;\n&lt;div style=\"color: red;\"&gt;&lt;/div&gt;\n&lt;!-- ✅ --&gt;\n&lt;div class=\"error-message\"&gt;&lt;/div&gt;\nKeep your HTML clean, CSS separate.",
-
-    "---",
-
-    "✅ 9️⃣ Keep Files Organized 🗂️\nSplit your CSS if the project grows:\n/styles\n  ├── base.css\n  ├── layout.css\n  ├── components.css\n  └── responsive.css\nOr use Tailwind/SCSS when needed.",
-
-    "---",
-
-    "✅ 🔟 Test. On. Devices.\nWhat looks good on laptop may break on a phone or tablet.\nAlways check responsiveness.\nUse browser dev tools &gt; responsive mode\n📱 💻 🖥️",
-
-    "---",
-
-    "👑 Final Blessings from My’s Castle:\nDon’t chase perfect UI, chase consistent flow\nWrite styles like you’ll read them 3 months later\nCSS is not just about looks — it’s how your ideas feel alive"
+&lt;!-- ✅ --&gt;
+&lt;div&gt; class="error-message"&gt;&lt;/div&gt;
+</pre>
+<p class='text-gray-300'>Inline is okay for quick tests, but avoid it in real projects.</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 9️⃣ Keep Files Organized 🗂️</div>",
+  "<p class='text-gray-300'>Split styles by purpose and scale as needed:</p>",
+  `<pre class='bg-[#2f2f47] text-sm text-gray-100 p-2 rounded overflow-x-auto'>/styles
+  ├── base.css
+  ├── layout.css
+  ├── components.css
+  └── responsive.css
+</pre>
+<p class='text-green-300'>Tailwind/SCSS makes this even cleaner with layers and nesting.</p>
+`,
+  "<div class='text-yellow-300 font-semibold'>✅ 🔟 Test. On. Devices.</div>",
+  "<p class='text-gray-300'>Looks great on desktop? Test again on phones & tablets.</p>",
+  "<p class='text-green-300'>Use dev tools → responsive mode 📱 💻 🖥️</p>",
+  " ",
+  "<div class='text-pink-300 font-bold text-base'>👑 Final Blessings from My’s Castle</div>",
+  "<p class='text-gray-300'>Don’t chase perfect UI, chase <span class='text-green-300'>consistent flow</span>.<br/>Write CSS like future-you will thank you.<br/>CSS isn’t just about looks — it’s the soul of your interface 💅</p>",
+  "<div class='text-green-400 text-sm italic mt-4'>🎉 CSS module done and dusted!</div>",
+  "<div class='text-gray-400 text-sm italic'>Wanna level up more? Go play around with your styles, or type <code class='bg-[#2f2f47] text-green-300 px-1 py-0.5 rounded'>open compiler</code> to test it live 💡</div>",
+  " ",
 ];
-
-

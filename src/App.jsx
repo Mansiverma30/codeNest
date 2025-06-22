@@ -5,7 +5,7 @@ import Topics from "./pages/Topics";
 import TerminalL from "./components/TerminalLayout";
 import Html from "./topics/html/Html";
 import Css from "./topics/css/Css";
-import Js from "./topics/javascript/Js";
+/* import Js from "./topics/javascript/Js"; */
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/terminal" element={<TerminalL />} />
           <Route path="/html" element={<Html />} />
           <Route path="/css" element={<Css />} />
-          <Route path="/js" element={<Js />} />
+          {/* <Route path="/js" element={<Js />} /> */}
         </Routes>
       </Router>
     </>
