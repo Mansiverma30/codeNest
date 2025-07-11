@@ -93,7 +93,3 @@ This project is licensed under the **MIT License**. See the [LICENSE.md](LICENSE
 Made with ❤️ by [Mansi Verma](https://github.com/Mansiverma30)
 
 If you like the project, don’t forget to ⭐ the repo!
-
-```
-Let me know if you want a version with badges (like GitHub stars, forks, or Netlify deployed badge)!
-```
