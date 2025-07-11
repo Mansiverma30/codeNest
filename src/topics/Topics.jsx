@@ -18,6 +18,8 @@ function Topics() {
    <span class='text-zinc-300 ml-4'>    Wipe the terminal screen</span>
    <span class='text-green-400'> home</span> 
    <span class='text-zinc-300 ml-4'>    Go back to the home page</span>
+   <span class='text-green-400'> playground</span> 
+   <span class='text-zinc-300 ml-4'>    Go back to the live editor page</span>
     ` /* <span class='text-green-400'>javascript</span> <br/> <span class='text-zinc-300 ml-4'>    Bring your pages to life by adding logic and interactivity with JavaScript.</span> */,
     " ",
     "Type a command to get started 🧠💻",

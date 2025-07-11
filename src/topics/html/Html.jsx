@@ -13,6 +13,8 @@ function Html() {
    <span class='text-zinc-300 ml-4'>    Go back to the home page</span>`,
     `<span class='text-green-400'>    topics</span> 
    <span class='text-zinc-300 ml-4'>    Go back to the topics page</span>`,
+    `<span class='text-green-400'>    playground</span> 
+   <span class='text-zinc-300 ml-4'>    Go back to the live editor page</span>`,
     `<span class='text-green-400'>    intro, 'tags and attributes', text, link, layout, forms, table, multi media, & best practices</span>` /* <br class='sm:hidden block/>' */,
     `<span class='text-green-400'>    help</span> 
    <span class='text-zinc-300 ml-4'>    Get list of all commands</span>`,

@@ -1,11 +1,11 @@
 import "./App.css";
 import Terminal from "./components/Terminal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Topics from "./pages/Topics";
+import Topics from "./topics/Topics";
 import TerminalL from "./components/TerminalLayout";
 import Html from "./topics/html/Html";
 import Css from "./topics/css/Css";
-/* import Js from "./topics/javascript/Js"; */
+import Editor from "./codeEditor/Editor";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/terminal" element={<TerminalL />} />
           <Route path="/html" element={<Html />} />
           <Route path="/css" element={<Css />} />
-          {/* <Route path="/js" element={<Js />} /> */}
+          <Route path="/editor" element={<Editor />} />
         </Routes>
       </Router>
     </>

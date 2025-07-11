@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Terminal({ children }) {
+  const navigate = useNavigate();
   return (
     <div className=" flex items-center justify-center bg-black ">
       <div
@@ -7,9 +10,18 @@ export default function Terminal({ children }) {
       >
         <div className="w-full bg-[#424040] rounded-t-lg">
           <div className="absolute flex space-x-2 px-2 pt-1">
-            <span className="rounded-full bg-red-500 w-3 h-3 cursor-pointer"></span>
-            <span className="rounded-full bg-yellow-400 w-3 h-3 cursor-pointer"></span>
-            <span className="rounded-full bg-green-500 w-3 h-3 cursor-pointer"></span>
+            <button
+              className="rounded-full bg-red-500 w-3 h-3 cursor-pointer"
+              onClick={() => navigate("/")}
+            ></button>
+            <button
+              className="rounded-full bg-yellow-300 w-3 h-3 cursor-pointer"
+              onClick={() => navigate("/")}
+            ></button>
+            <button
+              className="rounded-full bg-green-500 w-3 h-3 cursor-pointer"
+              onClick={() => navigate("/")}
+            ></button>
           </div>
           <div className="text-end items-end justify-items-end font-mono text-[#9c9c9c] px-2">
             <a href="https://github.com/Mansiverma30/codeNest" target="_blank">

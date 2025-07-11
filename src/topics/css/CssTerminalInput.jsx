@@ -38,6 +38,9 @@ function HtmlTerminalInput() {
       case "topics":
         navigate("/topics");
         return;
+      case "playground":
+        navigate("/editor");
+        return;
       case "home":
         navigate("/");
         return;

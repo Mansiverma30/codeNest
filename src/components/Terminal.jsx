@@ -11,12 +11,13 @@ function Terminal() {
     " ",
     `You can run several commands:`,
     `<span class='text-green-400'>    about</span> <br/> <span class='text-zinc-300 ml-4'>    Learn what CodeNest is.</span>
-    <span class='text-green-400'>features</span> <br/> <span class='text-zinc-300 ml-4'>    Explore the features</span>
     <span class='text-green-400'>socials</span> <br/> <span class='text-zinc-300 ml-4'>    Find me on Social Media.</span> 
     <span class='text-green-400'>help</span> <br/> <span class='text-zinc-300 ml-4'>    Get all commands.</span>
     <span class='text-green-400'>clear</span> <br/> <span class='text-zinc-300 ml-4'>    Clear the terminal.</span>
     <span class='text-green-400'>topics</span> 
-   <span class='text-zinc-300 ml-4'>    Go to the topics page</span>
+   <span class='text-zinc-300 ml-4'>  Go to the topics page</span>
+    <span class='text-green-400'>playground</span> 
+   <span class='text-zinc-300 ml-4'>  Go to the live editor page</span>
    `,
     " ",
     "Type a command to get started 🧠💻",

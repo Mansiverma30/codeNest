@@ -80,6 +80,9 @@ function HtmlTerminalInput() {
       case "css":
         navigate("/css");
         return;
+      case "playground":
+        navigate("/editor");
+        return;
       /* case "javascript":
         navigate("/js");
         return; */
